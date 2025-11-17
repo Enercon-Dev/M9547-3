@@ -1,0 +1,4 @@
+../src/Hardware/ADC.cpp:74:13:ErrorStatus ADC_DRV::GPIO_INIT()	16	static
+../src/Hardware/ADC.cpp:10:13:ErrorStatus ADC_DRV::Init()	96	static
+../src/Hardware/ADC.cpp:5:1:ADC_DRV::ADC_DRV()	8	static
+../src/Hardware/ADC.cpp:92:9:int16_t ADC_DRV::Get_ADC_Specific_Input_Data(ADC_Inputs_Enum)	8	static

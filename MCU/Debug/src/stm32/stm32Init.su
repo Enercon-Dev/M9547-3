@@ -1,0 +1,17 @@
+../CMSIS/Include/core_cm3.h:1762:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
+../src/stm32/stm32Init.c:14:13:RCC_reset	4	static
+../src/stm32/stm32Init.c:29:13:RCC_waitForCrFlagSet	24	static
+../src/stm32/stm32Init.c:45:13:RCC_HSEConfig	4	static
+../src/stm32/stm32Init.c:56:13:RCC_configCFGRReg	24	static
+../src/stm32/stm32Init.c:72:13:RCC_configCFGR2Reg	24	static
+../src/stm32/stm32Init.c:88:13:RCC_setPLL_CR_BB	16	static
+../src/stm32/stm32Init.c:96:13:RCC_waitForSysclock	16	static
+../src/stm32/stm32Init.c:111:13:RCC_AHBPeriphClockActivate	16	static
+../src/stm32/stm32Init.c:119:13:RCC_APB2PeriphClockActivate	16	static
+../src/stm32/stm32Init.c:127:13:RCC_Configuration	8	static
+../src/stm32/stm32Init.c:184:13:NVIC_Configuration	4	static
+../src/stm32/stm32Init.c:189:13:GPIO_setData	24	static
+../src/stm32/stm32Init.c:203:13:ethernetPhysicalInit	16	static
+../src/stm32/stm32Init.c:230:6:ethernetMacInit	8	static
+../src/stm32/stm32Init.c:256:5:stm32SystemInit	8	static
+../src/stm32/stm32Init.c:285:6:systemResetNoStats	8	static

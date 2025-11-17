@@ -1,0 +1,8 @@
+../src/communicationCenter/handlers/DHCP.cpp:27:1:DHCPClient::DHCPClient(IPData&, Layer3&)	16	static
+../src/communicationCenter/handlers/DHCP.cpp:47:8:void DHCPClient::openSocket()	8	static
+../src/communicationCenter/handlers/DHCP.cpp:179:8:void DHCPClient::closeSocket()	8	static
+../src/communicationCenter/handlers/DHCP.cpp:247:8:void DHCPClient::sendMessage(DHCP_Message_Type, uint32_t, uint32_t)	40	static
+../src/communicationCenter/handlers/DHCP.cpp:270:22:DHCP_Message_Type DHCPClient::recvMessage(IPData&, uint32_t*, uint32_t*)	64	static
+../src/communicationCenter/handlers/DHCP.cpp:113:8:void DHCPClient::readBuffer()	40	static
+../src/communicationCenter/handlers/DHCP.cpp:188:8:bool DHCPClient::isClosed() const	8	static
+../src/communicationCenter/handlers/DHCP.cpp:56:8:void DHCPClient::periodicCall()	8	static

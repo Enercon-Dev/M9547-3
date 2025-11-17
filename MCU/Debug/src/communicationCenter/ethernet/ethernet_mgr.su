@@ -1,0 +1,15 @@
+../src/communicationCenter/ethernet/ethernet_mgr.c:72:6:ethernetConfigMIIAR	16	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:83:6:ethernetConfigCR	16	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:107:6:ethernetConfigFFR	16	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:123:6:ethernetConfigHTR	4	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:131:6:ethernetConfigFCR	16	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:147:13:ethernetConfigVLANTR	16	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:157:13:ethernetConfigDMA0MR	16	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:176:13:ethernetConfigDMABMR	16	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:191:13:ethernetConfig	8	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:205:13:ETH_Start	4	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:217:5:ethernetMACConfig	8	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:236:6:ETH_WKUP_IRQHandler	4	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:249:6:ETH_DMAReceptionCmd	16	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:266:6:ethernetConfigMAC	16	static
+../src/communicationCenter/ethernet/ethernet_mgr.c:291:10:calcChecksum	48	static

@@ -1,0 +1,8 @@
+../src/Hardware/GPIO.cpp:58:1:GPIO::GPIO()	32	static
+../src/Hardware/GPIO.cpp:134:6:void GPIO::periodicCall()	16	static
+../src/Hardware/GPIO.cpp:245:9:uint8_t GPIO::IsRemote()	8	static
+../src/Hardware/GPIO.cpp:220:6:void GPIO::Get_Status(Dig_IO_t&)	24	static
+../src/Hardware/GPIO.cpp:118:9:uint8_t GPIO::GetAddressFirst()	16	static
+../src/Hardware/GPIO.cpp:253:6:void GPIO::Get_GPIO_Inputs(GPIO_Inputs*)	8	static
+../src/Hardware/GPIO.cpp:267:13:ErrorStatus GPIO::Set_GPO(uint8_t, uint8_t)	0	static
+../src/Hardware/GPIO.cpp:285:6:void GPIO::SetFault(FunctionalState)	8	static

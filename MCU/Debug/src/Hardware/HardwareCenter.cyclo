@@ -1,0 +1,23 @@
+../src/Hardware/HardwareCenter.cpp:10:1:HardwareCenter::HardwareCenter()	4
+../src/Hardware/HardwareCenter.cpp:100:13:ErrorStatus HardwareCenter::GetStatusEXT(Status_EXT_T&)	3
+../src/Hardware/HardwareCenter.cpp:119:13:ErrorStatus HardwareCenter::GetStatus(Status_Msg_T&)	14
+../src/Hardware/HardwareCenter.cpp:23:6:void HardwareCenter::periodicCall()	28
+../src/Hardware/HardwareCenter.cpp:179:12:FlagStatus HardwareCenter::GetAlert() const	3
+../src/Hardware/HardwareCenter.cpp:186:6:void HardwareCenter::AlertAcknoledge()	2
+../src/Hardware/HardwareCenter.cpp:216:17:COMMAND_SUCCESS HardwareCenter::handleSetGPO(Buffer&)	2
+../src/Hardware/HardwareCenter.cpp:296:17:COMMAND_SUCCESS HardwareCenter::handleSetGroup(Buffer&)	8
+../src/Hardware/HardwareCenter.cpp:321:17:COMMAND_SUCCESS HardwareCenter::handleSetMacro(Buffer&)	2
+../src/Hardware/HardwareCenter.cpp:328:6:void HardwareCenter::handelGetOutsTemp(Buffer&)	2
+../src/Hardware/HardwareCenter.cpp:334:6:void HardwareCenter::SetMacroDelay(uint16_t)	1
+../src/Hardware/HardwareCenter.cpp:357:12:BusyStatus DelayWrapper(const uint8_t*)	2
+../src/Hardware/HardwareCenter.cpp:364:12:BusyStatus GPOSetWrapper(const uint8_t*)	4
+../src/Hardware/HardwareCenter.cpp:373:12:BusyStatus GPOClearWrapper(const uint8_t*)	4
+../src/Hardware/HardwareCenter.cpp:382:12:BusyStatus SendStateWrapper(const uint8_t*)	1
+../src/Hardware/HardwareCenter.cpp:390:17:COMMAND_SUCCESS HardwareCenter::IsValidOutputNumber(uint8_t)	2
+../src/Hardware/HardwareCenter.cpp:191:13:ErrorStatus HardwareCenter::handleSetOutput(uint8_t, uint8_t)	3
+../src/Hardware/HardwareCenter.cpp:208:17:COMMAND_SUCCESS HardwareCenter::handleSetOutput(Buffer&)	2
+../src/Hardware/HardwareCenter.cpp:339:12:BusyStatus OutputOnWrapper(const uint8_t*)	4
+../src/Hardware/HardwareCenter.cpp:348:12:BusyStatus OutputOffWrapper(const uint8_t*)	4
+../src/Hardware/HardwareCenter.cpp:224:17:COMMAND_SUCCESS HardwareCenter::handleSetBattle(Buffer&)	4
+../src/Hardware/HardwareCenter.cpp:246:17:COMMAND_SUCCESS HardwareCenter::handleTripRest(Buffer&)	4
+../src/Hardware/HardwareCenter.cpp:267:17:COMMAND_SUCCESS HardwareCenter::handleSetLimit(Buffer&)	4

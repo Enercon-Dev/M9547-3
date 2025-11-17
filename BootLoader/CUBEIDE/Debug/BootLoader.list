@@ -1,0 +1,1171 @@
+
+BootLoader.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .isr_vector   00000040  08000000  08000000  00001000  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  1 .text         0000063c  08000040  08000040  00001040  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .rodata       00000028  0800067c  0800067c  0000167c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .ARM.extab    00000000  080006a4  080006a4  000018a0  2**0
+                  CONTENTS
+  4 .ARM          00000008  080006a4  080006a4  000016a4  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .preinit_array 00000000  080006ac  080006ac  000018a0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .init_array   00000004  080006ac  080006ac  000016ac  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .fini_array   00000004  080006b0  080006b0  000016b0  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  8 .data         00000000  20000000  20000000  000018a0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  9 .boot_data    000000a0  08000800  08000800  00001800  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 10 .bss          0000001c  20000000  20000000  00002000  2**2
+                  ALLOC
+ 11 ._user_heap_stack 00000604  2000001c  2000001c  00002000  2**0
+                  ALLOC
+ 12 .ARM.attributes 00000029  00000000  00000000  000018a0  2**0
+                  CONTENTS, READONLY
+ 13 .debug_line   00001272  00000000  00000000  000018c9  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 14 .debug_line_str 00000056  00000000  00000000  00002b3b  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 15 .debug_info   00000cb3  00000000  00000000  00002b91  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 16 .debug_abbrev 000004c2  00000000  00000000  00003844  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 17 .debug_aranges 00000150  00000000  00000000  00003d08  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 18 .debug_str    0003d139  00000000  00000000  00003e58  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 19 .debug_rnglists 000000f4  00000000  00000000  00040f91  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 20 .debug_macro  00013c72  00000000  00000000  00041085  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 21 .comment      00000043  00000000  00000000  00054cf7  2**0
+                  CONTENTS, READONLY
+ 22 .debug_frame  000004dc  00000000  00000000  00054d3c  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+
+Disassembly of section .text:
+
+08000040 <__do_global_dtors_aux>:
+ 8000040:	b510      	push	{r4, lr}
+ 8000042:	4c05      	ldr	r4, [pc, #20]	@ (8000058 <__do_global_dtors_aux+0x18>)
+ 8000044:	7823      	ldrb	r3, [r4, #0]
+ 8000046:	b933      	cbnz	r3, 8000056 <__do_global_dtors_aux+0x16>
+ 8000048:	4b04      	ldr	r3, [pc, #16]	@ (800005c <__do_global_dtors_aux+0x1c>)
+ 800004a:	b113      	cbz	r3, 8000052 <__do_global_dtors_aux+0x12>
+ 800004c:	4804      	ldr	r0, [pc, #16]	@ (8000060 <__do_global_dtors_aux+0x20>)
+ 800004e:	f3af 8000 	nop.w
+ 8000052:	2301      	movs	r3, #1
+ 8000054:	7023      	strb	r3, [r4, #0]
+ 8000056:	bd10      	pop	{r4, pc}
+ 8000058:	20000000 	.word	0x20000000
+ 800005c:	00000000 	.word	0x00000000
+ 8000060:	08000664 	.word	0x08000664
+
+08000064 <frame_dummy>:
+ 8000064:	b508      	push	{r3, lr}
+ 8000066:	4b03      	ldr	r3, [pc, #12]	@ (8000074 <frame_dummy+0x10>)
+ 8000068:	b11b      	cbz	r3, 8000072 <frame_dummy+0xe>
+ 800006a:	4903      	ldr	r1, [pc, #12]	@ (8000078 <frame_dummy+0x14>)
+ 800006c:	4803      	ldr	r0, [pc, #12]	@ (800007c <frame_dummy+0x18>)
+ 800006e:	f3af 8000 	nop.w
+ 8000072:	bd08      	pop	{r3, pc}
+ 8000074:	00000000 	.word	0x00000000
+ 8000078:	20000004 	.word	0x20000004
+ 800007c:	08000664 	.word	0x08000664
+
+08000080 <strcmp>:
+ 8000080:	f810 2b01 	ldrb.w	r2, [r0], #1
+ 8000084:	f811 3b01 	ldrb.w	r3, [r1], #1
+ 8000088:	2a01      	cmp	r2, #1
+ 800008a:	bf28      	it	cs
+ 800008c:	429a      	cmpcs	r2, r3
+ 800008e:	d0f7      	beq.n	8000080 <strcmp>
+ 8000090:	1ad0      	subs	r0, r2, r3
+ 8000092:	4770      	bx	lr
+
+08000094 <Reset_Handler>:
+  .weak Reset_Handler
+  .type Reset_Handler, %function
+Reset_Handler:
+
+/* Copy the data segment initializers from flash to SRAM */
+  ldr r0, =_sdata
+ 8000094:	480b      	ldr	r0, [pc, #44]	@ (80000c4 <LoopFillZerobss+0xe>)
+  ldr r1, =_edata
+ 8000096:	490c      	ldr	r1, [pc, #48]	@ (80000c8 <LoopFillZerobss+0x12>)
+  ldr r2, =_sidata
+ 8000098:	4a0c      	ldr	r2, [pc, #48]	@ (80000cc <LoopFillZerobss+0x16>)
+  movs r3, #0
+ 800009a:	2300      	movs	r3, #0
+  b LoopCopyDataInit
+ 800009c:	e002      	b.n	80000a4 <LoopCopyDataInit>
+
+0800009e <CopyDataInit>:
+
+CopyDataInit:
+  ldr r4, [r2, r3]
+ 800009e:	58d4      	ldr	r4, [r2, r3]
+  str r4, [r0, r3]
+ 80000a0:	50c4      	str	r4, [r0, r3]
+  adds r3, r3, #4
+ 80000a2:	3304      	adds	r3, #4
+
+080000a4 <LoopCopyDataInit>:
+
+LoopCopyDataInit:
+  adds r4, r0, r3
+ 80000a4:	18c4      	adds	r4, r0, r3
+  cmp r4, r1
+ 80000a6:	428c      	cmp	r4, r1
+  bcc CopyDataInit
+ 80000a8:	d3f9      	bcc.n	800009e <CopyDataInit>
+  
+/* Zero fill the bss segment. */
+  ldr r2, =_sbss
+ 80000aa:	4a09      	ldr	r2, [pc, #36]	@ (80000d0 <LoopFillZerobss+0x1a>)
+  ldr r4, =_ebss
+ 80000ac:	4c09      	ldr	r4, [pc, #36]	@ (80000d4 <LoopFillZerobss+0x1e>)
+  movs r3, #0
+ 80000ae:	2300      	movs	r3, #0
+  b LoopFillZerobss
+ 80000b0:	e001      	b.n	80000b6 <LoopFillZerobss>
+
+080000b2 <FillZerobss>:
+
+FillZerobss:
+  str  r3, [r2]
+ 80000b2:	6013      	str	r3, [r2, #0]
+  adds r2, r2, #4
+ 80000b4:	3204      	adds	r2, #4
+
+080000b6 <LoopFillZerobss>:
+
+LoopFillZerobss:
+  cmp r2, r4
+ 80000b6:	42a2      	cmp	r2, r4
+  bcc FillZerobss
+ 80000b8:	d3fb      	bcc.n	80000b2 <FillZerobss>
+
+/* Call the clock system intitialization function.*/
+/*    bl  SystemInit
+/* Call static constructors */
+    bl __libc_init_array
+ 80000ba:	f000 faaf 	bl	800061c <__libc_init_array>
+/* Call the application's entry point.*/
+  bl bl_main
+ 80000be:	f000 f965 	bl	800038c <bl_main>
+  bx lr
+ 80000c2:	4770      	bx	lr
+  ldr r0, =_sdata
+ 80000c4:	20000000 	.word	0x20000000
+  ldr r1, =_edata
+ 80000c8:	20000000 	.word	0x20000000
+  ldr r2, =_sidata
+ 80000cc:	080006b4 	.word	0x080006b4
+  ldr r2, =_sbss
+ 80000d0:	20000000 	.word	0x20000000
+  ldr r4, =_ebss
+ 80000d4:	2000001c 	.word	0x2000001c
+
+080000d8 <BusFault_Handler>:
+ * @retval : None
+*/
+    .section .text.Default_Handler,"ax",%progbits
+Default_Handler:
+Infinite_Loop:
+  b Infinite_Loop
+ 80000d8:	e7fe      	b.n	80000d8 <BusFault_Handler>
+	...
+
+080000dc <__NVIC_SystemReset>:
+/**
+  \brief   System Reset
+  \details Initiates a system reset request to reset the MCU.
+ */
+__NO_RETURN __STATIC_INLINE void __NVIC_SystemReset(void)
+{
+ 80000dc:	b480      	push	{r7}
+ 80000de:	af00      	add	r7, sp, #0
+  \details Acts as a special kind of Data Memory Barrier.
+           It completes when all explicit memory accesses before this instruction complete.
+ */
+__STATIC_FORCEINLINE void __DSB(void)
+{
+  __ASM volatile ("dsb 0xF":::"memory");
+ 80000e0:	f3bf 8f4f 	dsb	sy
+}
+ 80000e4:	bf00      	nop
+  __DSB();                                                          /* Ensure all outstanding memory accesses included
+                                                                       buffered write are completed before reset */
+  SCB->AIRCR  = (uint32_t)((0x5FAUL << SCB_AIRCR_VECTKEY_Pos)    |
+                           (SCB->AIRCR & SCB_AIRCR_PRIGROUP_Msk) |
+ 80000e6:	4b06      	ldr	r3, [pc, #24]	@ (8000100 <__NVIC_SystemReset+0x24>)
+ 80000e8:	68db      	ldr	r3, [r3, #12]
+ 80000ea:	f403 62e0 	and.w	r2, r3, #1792	@ 0x700
+  SCB->AIRCR  = (uint32_t)((0x5FAUL << SCB_AIRCR_VECTKEY_Pos)    |
+ 80000ee:	4904      	ldr	r1, [pc, #16]	@ (8000100 <__NVIC_SystemReset+0x24>)
+ 80000f0:	4b04      	ldr	r3, [pc, #16]	@ (8000104 <__NVIC_SystemReset+0x28>)
+ 80000f2:	4313      	orrs	r3, r2
+ 80000f4:	60cb      	str	r3, [r1, #12]
+  __ASM volatile ("dsb 0xF":::"memory");
+ 80000f6:	f3bf 8f4f 	dsb	sy
+}
+ 80000fa:	bf00      	nop
+                            SCB_AIRCR_SYSRESETREQ_Msk    );         /* Keep priority group unchanged */
+  __DSB();                                                          /* Ensure completion of memory access */
+
+  for(;;)                                                           /* wait until reset */
+  {
+    __NOP();
+ 80000fc:	bf00      	nop
+ 80000fe:	e7fd      	b.n	80000fc <__NVIC_SystemReset+0x20>
+ 8000100:	e000ed00 	.word	0xe000ed00
+ 8000104:	05fa0004 	.word	0x05fa0004
+
+08000108 <enterLiveLoop>:
+#pragma location=BOOT_DATA_ADDRESS
+const Memory_Type Memory = {BOOT_LOADER_VERSION, APPLICATION_ADDRESS, 0,0,"","", BOOT_LOADER_VERSION,0,""};
+#endif
+
+
+void enterLiveLoop(){
+ 8000108:	b480      	push	{r7}
+ 800010a:	af00      	add	r7, sp, #0
+  while (1);
+ 800010c:	bf00      	nop
+ 800010e:	e7fd      	b.n	800010c <enterLiveLoop+0x4>
+
+08000110 <MemoryOK>:
+}
+
+
+boolean MemoryOK(){
+ 8000110:	b580      	push	{r7, lr}
+ 8000112:	af00      	add	r7, sp, #0
+  if (strcmp(Memory.magicNumber,BOOT_LOADER_VERSION) || strcmp(Memory.magicNumber2,BOOT_LOADER_VERSION))
+ 8000114:	4909      	ldr	r1, [pc, #36]	@ (800013c <MemoryOK+0x2c>)
+ 8000116:	480a      	ldr	r0, [pc, #40]	@ (8000140 <MemoryOK+0x30>)
+ 8000118:	f7ff ffb2 	bl	8000080 <strcmp>
+ 800011c:	4603      	mov	r3, r0
+ 800011e:	2b00      	cmp	r3, #0
+ 8000120:	d106      	bne.n	8000130 <MemoryOK+0x20>
+ 8000122:	4906      	ldr	r1, [pc, #24]	@ (800013c <MemoryOK+0x2c>)
+ 8000124:	4807      	ldr	r0, [pc, #28]	@ (8000144 <MemoryOK+0x34>)
+ 8000126:	f7ff ffab 	bl	8000080 <strcmp>
+ 800012a:	4603      	mov	r3, r0
+ 800012c:	2b00      	cmp	r3, #0
+ 800012e:	d001      	beq.n	8000134 <MemoryOK+0x24>
+    return FALSE;
+ 8000130:	2300      	movs	r3, #0
+ 8000132:	e000      	b.n	8000136 <MemoryOK+0x26>
+  else 
+    return TRUE;
+ 8000134:	2301      	movs	r3, #1
+}
+ 8000136:	4618      	mov	r0, r3
+ 8000138:	bd80      	pop	{r7, pc}
+ 800013a:	bf00      	nop
+ 800013c:	0800067c 	.word	0x0800067c
+ 8000140:	08000800 	.word	0x08000800
+ 8000144:	08000862 	.word	0x08000862
+
+08000148 <ResetMemory>:
+
+void ResetMemory(){
+ 8000148:	b580      	push	{r7, lr}
+ 800014a:	b082      	sub	sp, #8
+ 800014c:	af00      	add	r7, sp, #0
+
+  FLASH_Unlock();
+ 800014e:	f000 f949 	bl	80003e4 <FLASH_Unlock>
+  FLASH_Status flashstatus = FLASH_GetStatus();
+ 8000152:	f000 f9f9 	bl	8000548 <FLASH_GetStatus>
+ 8000156:	4603      	mov	r3, r0
+ 8000158:	71fb      	strb	r3, [r7, #7]
+  if (flashstatus == FLASH_ERROR_PG) { 
+ 800015a:	79fb      	ldrb	r3, [r7, #7]
+ 800015c:	2b02      	cmp	r3, #2
+ 800015e:	d102      	bne.n	8000166 <ResetMemory+0x1e>
+    FLASH_ClearFlag(FLASH_FLAG_PGERR);
+ 8000160:	2004      	movs	r0, #4
+ 8000162:	f000 f9e1 	bl	8000528 <FLASH_ClearFlag>
+  }
+  if (flashstatus == FLASH_ERROR_WRP) {
+ 8000166:	79fb      	ldrb	r3, [r7, #7]
+ 8000168:	2b03      	cmp	r3, #3
+ 800016a:	d102      	bne.n	8000172 <ResetMemory+0x2a>
+    FLASH_ClearFlag(FLASH_FLAG_WRPRTERR);
+ 800016c:	2010      	movs	r0, #16
+ 800016e:	f000 f9db 	bl	8000528 <FLASH_ClearFlag>
+  }
+  
+  if (FLASH_ErasePage(BOOT_DATA_ADDRESS) != FLASH_COMPLETE) {
+ 8000172:	f04f 2008 	mov.w	r0, #134219776	@ 0x8000800
+ 8000176:	f000 f955 	bl	8000424 <FLASH_ErasePage>
+ 800017a:	4603      	mov	r3, r0
+ 800017c:	2b04      	cmp	r3, #4
+ 800017e:	d001      	beq.n	8000184 <ResetMemory+0x3c>
+    enterLiveLoop();
+ 8000180:	f7ff ffc2 	bl	8000108 <enterLiveLoop>
+  }
+  
+  FLASH_Lock(); 
+ 8000184:	f000 f940 	bl	8000408 <FLASH_Lock>
+}
+ 8000188:	bf00      	nop
+ 800018a:	3708      	adds	r7, #8
+ 800018c:	46bd      	mov	sp, r7
+ 800018e:	bd80      	pop	{r7, pc}
+
+08000190 <FixMemory>:
+
+void FixMemory(){
+ 8000190:	b5f0      	push	{r4, r5, r6, r7, lr}
+ 8000192:	b0ab      	sub	sp, #172	@ 0xac
+ 8000194:	af00      	add	r7, sp, #0
+  Memory_Type NewMemory = {BOOT_LOADER_VERSION, APPLICATION_ADDRESS, 0,0,"","", BOOT_LOADER_VERSION};
+ 8000196:	463b      	mov	r3, r7
+ 8000198:	22a0      	movs	r2, #160	@ 0xa0
+ 800019a:	2100      	movs	r1, #0
+ 800019c:	4618      	mov	r0, r3
+ 800019e:	f000 fa35 	bl	800060c <memset>
+ 80001a2:	4b40      	ldr	r3, [pc, #256]	@ (80002a4 <FixMemory+0x114>)
+ 80001a4:	463c      	mov	r4, r7
+ 80001a6:	461d      	mov	r5, r3
+ 80001a8:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+ 80001aa:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+ 80001ac:	682b      	ldr	r3, [r5, #0]
+ 80001ae:	7023      	strb	r3, [r4, #0]
+ 80001b0:	f107 0311 	add.w	r3, r7, #17
+ 80001b4:	2200      	movs	r2, #0
+ 80001b6:	801a      	strh	r2, [r3, #0]
+ 80001b8:	709a      	strb	r2, [r3, #2]
+ 80001ba:	4b3b      	ldr	r3, [pc, #236]	@ (80002a8 <FixMemory+0x118>)
+ 80001bc:	617b      	str	r3, [r7, #20]
+ 80001be:	4b39      	ldr	r3, [pc, #228]	@ (80002a4 <FixMemory+0x114>)
+ 80001c0:	f107 0562 	add.w	r5, r7, #98	@ 0x62
+ 80001c4:	461c      	mov	r4, r3
+ 80001c6:	cc0f      	ldmia	r4!, {r0, r1, r2, r3}
+ 80001c8:	6028      	str	r0, [r5, #0]
+ 80001ca:	6069      	str	r1, [r5, #4]
+ 80001cc:	60aa      	str	r2, [r5, #8]
+ 80001ce:	60eb      	str	r3, [r5, #12]
+ 80001d0:	7823      	ldrb	r3, [r4, #0]
+ 80001d2:	742b      	strb	r3, [r5, #16]
+ 80001d4:	f107 0373 	add.w	r3, r7, #115	@ 0x73
+ 80001d8:	2200      	movs	r2, #0
+ 80001da:	801a      	strh	r2, [r3, #0]
+ 80001dc:	709a      	strb	r2, [r3, #2]
+  memcpy(NewMemory.active_version_file, Memory.new_version_file, 33);
+ 80001de:	4b33      	ldr	r3, [pc, #204]	@ (80002ac <FixMemory+0x11c>)
+ 80001e0:	f103 0441 	add.w	r4, r3, #65	@ 0x41
+ 80001e4:	f107 0620 	add.w	r6, r7, #32
+ 80001e8:	f104 0c20 	add.w	ip, r4, #32
+ 80001ec:	4635      	mov	r5, r6
+ 80001ee:	4623      	mov	r3, r4
+ 80001f0:	6818      	ldr	r0, [r3, #0]
+ 80001f2:	6859      	ldr	r1, [r3, #4]
+ 80001f4:	689a      	ldr	r2, [r3, #8]
+ 80001f6:	68db      	ldr	r3, [r3, #12]
+ 80001f8:	c50f      	stmia	r5!, {r0, r1, r2, r3}
+ 80001fa:	3410      	adds	r4, #16
+ 80001fc:	3610      	adds	r6, #16
+ 80001fe:	4564      	cmp	r4, ip
+ 8000200:	d1f4      	bne.n	80001ec <FixMemory+0x5c>
+ 8000202:	4633      	mov	r3, r6
+ 8000204:	4622      	mov	r2, r4
+ 8000206:	7812      	ldrb	r2, [r2, #0]
+ 8000208:	701a      	strb	r2, [r3, #0]
+  NewMemory.active_version_length = Memory.new_version_length;
+ 800020a:	4b28      	ldr	r3, [pc, #160]	@ (80002ac <FixMemory+0x11c>)
+ 800020c:	69db      	ldr	r3, [r3, #28]
+ 800020e:	61bb      	str	r3, [r7, #24]
+  memcpy(NewMemory.FPGA_version_file, Memory.FPGA_version_file,33);
+ 8000210:	4b26      	ldr	r3, [pc, #152]	@ (80002ac <FixMemory+0x11c>)
+ 8000212:	f107 047c 	add.w	r4, r7, #124	@ 0x7c
+ 8000216:	f103 057c 	add.w	r5, r3, #124	@ 0x7c
+ 800021a:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+ 800021c:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+ 800021e:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+ 8000220:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+ 8000222:	682b      	ldr	r3, [r5, #0]
+ 8000224:	7023      	strb	r3, [r4, #0]
+  NewMemory.FPGA_version_length = Memory.FPGA_version_length;
+ 8000226:	4b21      	ldr	r3, [pc, #132]	@ (80002ac <FixMemory+0x11c>)
+ 8000228:	6f9b      	ldr	r3, [r3, #120]	@ 0x78
+ 800022a:	67bb      	str	r3, [r7, #120]	@ 0x78
+  ResetMemory();
+ 800022c:	f7ff ff8c 	bl	8000148 <ResetMemory>
+  
+  FLASH_Unlock();
+ 8000230:	f000 f8d8 	bl	80003e4 <FLASH_Unlock>
+  FLASH_Status flashstatus = FLASH_GetStatus();
+ 8000234:	f000 f988 	bl	8000548 <FLASH_GetStatus>
+ 8000238:	4603      	mov	r3, r0
+ 800023a:	f887 30a3 	strb.w	r3, [r7, #163]	@ 0xa3
+  if (flashstatus == FLASH_ERROR_PG) { 
+ 800023e:	f897 30a3 	ldrb.w	r3, [r7, #163]	@ 0xa3
+ 8000242:	2b02      	cmp	r3, #2
+ 8000244:	d102      	bne.n	800024c <FixMemory+0xbc>
+    FLASH_ClearFlag(FLASH_FLAG_PGERR);
+ 8000246:	2004      	movs	r0, #4
+ 8000248:	f000 f96e 	bl	8000528 <FLASH_ClearFlag>
+  }
+  if (flashstatus == FLASH_ERROR_WRP) {
+ 800024c:	f897 30a3 	ldrb.w	r3, [r7, #163]	@ 0xa3
+ 8000250:	2b03      	cmp	r3, #3
+ 8000252:	d102      	bne.n	800025a <FixMemory+0xca>
+    FLASH_ClearFlag(FLASH_FLAG_WRPRTERR);
+ 8000254:	2010      	movs	r0, #16
+ 8000256:	f000 f967 	bl	8000528 <FLASH_ClearFlag>
+  }
+  for (int i=0 ; i < sizeof(Memory_Type)/4; i++)
+ 800025a:	2300      	movs	r3, #0
+ 800025c:	f8c7 30a4 	str.w	r3, [r7, #164]	@ 0xa4
+ 8000260:	e017      	b.n	8000292 <FixMemory+0x102>
+    if (FLASH_ProgramWord(i*4+BOOT_DATA_ADDRESS, *((uint32_t *)(&NewMemory)+i) ) != FLASH_COMPLETE) {
+ 8000262:	f8d7 30a4 	ldr.w	r3, [r7, #164]	@ 0xa4
+ 8000266:	009b      	lsls	r3, r3, #2
+ 8000268:	f103 2008 	add.w	r0, r3, #134219776	@ 0x8000800
+ 800026c:	f8d7 30a4 	ldr.w	r3, [r7, #164]	@ 0xa4
+ 8000270:	009b      	lsls	r3, r3, #2
+ 8000272:	463a      	mov	r2, r7
+ 8000274:	4413      	add	r3, r2
+ 8000276:	681b      	ldr	r3, [r3, #0]
+ 8000278:	4619      	mov	r1, r3
+ 800027a:	f000 f909 	bl	8000490 <FLASH_ProgramWord>
+ 800027e:	4603      	mov	r3, r0
+ 8000280:	2b04      	cmp	r3, #4
+ 8000282:	d001      	beq.n	8000288 <FixMemory+0xf8>
+      enterLiveLoop();
+ 8000284:	f7ff ff40 	bl	8000108 <enterLiveLoop>
+  for (int i=0 ; i < sizeof(Memory_Type)/4; i++)
+ 8000288:	f8d7 30a4 	ldr.w	r3, [r7, #164]	@ 0xa4
+ 800028c:	3301      	adds	r3, #1
+ 800028e:	f8c7 30a4 	str.w	r3, [r7, #164]	@ 0xa4
+ 8000292:	f8d7 30a4 	ldr.w	r3, [r7, #164]	@ 0xa4
+ 8000296:	2b27      	cmp	r3, #39	@ 0x27
+ 8000298:	d9e3      	bls.n	8000262 <FixMemory+0xd2>
+  }
+  
+  FLASH_Lock();
+ 800029a:	f000 f8b5 	bl	8000408 <FLASH_Lock>
+  NVIC_SystemReset();
+ 800029e:	f7ff ff1d 	bl	80000dc <__NVIC_SystemReset>
+ 80002a2:	bf00      	nop
+ 80002a4:	08000690 	.word	0x08000690
+ 80002a8:	08002000 	.word	0x08002000
+ 80002ac:	08000800 	.word	0x08000800
+
+080002b0 <UpgradeFile>:
+  
+  
+}
+
+void UpgradeFile(){
+ 80002b0:	b580      	push	{r7, lr}
+ 80002b2:	b084      	sub	sp, #16
+ 80002b4:	af00      	add	r7, sp, #0
+  
+
+FLASH_Unlock();
+ 80002b6:	f000 f895 	bl	80003e4 <FLASH_Unlock>
+  FLASH_Status flashstatus = FLASH_GetStatus();
+ 80002ba:	f000 f945 	bl	8000548 <FLASH_GetStatus>
+ 80002be:	4603      	mov	r3, r0
+ 80002c0:	70fb      	strb	r3, [r7, #3]
+  if (flashstatus == FLASH_ERROR_PG) { 
+ 80002c2:	78fb      	ldrb	r3, [r7, #3]
+ 80002c4:	2b02      	cmp	r3, #2
+ 80002c6:	d102      	bne.n	80002ce <UpgradeFile+0x1e>
+    FLASH_ClearFlag(FLASH_FLAG_PGERR);
+ 80002c8:	2004      	movs	r0, #4
+ 80002ca:	f000 f92d 	bl	8000528 <FLASH_ClearFlag>
+  }
+  if (flashstatus == FLASH_ERROR_WRP) {
+ 80002ce:	78fb      	ldrb	r3, [r7, #3]
+ 80002d0:	2b03      	cmp	r3, #3
+ 80002d2:	d102      	bne.n	80002da <UpgradeFile+0x2a>
+    FLASH_ClearFlag(FLASH_FLAG_WRPRTERR);
+ 80002d4:	2010      	movs	r0, #16
+ 80002d6:	f000 f927 	bl	8000528 <FLASH_ClearFlag>
+  }
+  
+  for (uint32_t add = APPLICATION_ADDRESS; add < Memory.bootLocation ; add +=0x800){
+ 80002da:	4b2a      	ldr	r3, [pc, #168]	@ (8000384 <UpgradeFile+0xd4>)
+ 80002dc:	60fb      	str	r3, [r7, #12]
+ 80002de:	e00b      	b.n	80002f8 <UpgradeFile+0x48>
+    if (FLASH_ErasePage(add) != FLASH_COMPLETE)
+ 80002e0:	68f8      	ldr	r0, [r7, #12]
+ 80002e2:	f000 f89f 	bl	8000424 <FLASH_ErasePage>
+ 80002e6:	4603      	mov	r3, r0
+ 80002e8:	2b04      	cmp	r3, #4
+ 80002ea:	d001      	beq.n	80002f0 <UpgradeFile+0x40>
+      enterLiveLoop();
+ 80002ec:	f7ff ff0c 	bl	8000108 <enterLiveLoop>
+  for (uint32_t add = APPLICATION_ADDRESS; add < Memory.bootLocation ; add +=0x800){
+ 80002f0:	68fb      	ldr	r3, [r7, #12]
+ 80002f2:	f503 6300 	add.w	r3, r3, #2048	@ 0x800
+ 80002f6:	60fb      	str	r3, [r7, #12]
+ 80002f8:	4b23      	ldr	r3, [pc, #140]	@ (8000388 <UpgradeFile+0xd8>)
+ 80002fa:	695b      	ldr	r3, [r3, #20]
+ 80002fc:	68fa      	ldr	r2, [r7, #12]
+ 80002fe:	429a      	cmp	r2, r3
+ 8000300:	d3ee      	bcc.n	80002e0 <UpgradeFile+0x30>
+  }
+  for (uint32_t offset = 0; offset < (Memory.new_version_length+3); offset+=4){
+ 8000302:	2300      	movs	r3, #0
+ 8000304:	60bb      	str	r3, [r7, #8]
+ 8000306:	e015      	b.n	8000334 <UpgradeFile+0x84>
+    if (FLASH_ProgramWord(offset + APPLICATION_ADDRESS, *(uint32_t *)(Memory.bootLocation + offset)) != FLASH_COMPLETE)
+ 8000308:	68bb      	ldr	r3, [r7, #8]
+ 800030a:	f103 6300 	add.w	r3, r3, #134217728	@ 0x8000000
+ 800030e:	f503 5300 	add.w	r3, r3, #8192	@ 0x2000
+ 8000312:	4a1d      	ldr	r2, [pc, #116]	@ (8000388 <UpgradeFile+0xd8>)
+ 8000314:	6951      	ldr	r1, [r2, #20]
+ 8000316:	68ba      	ldr	r2, [r7, #8]
+ 8000318:	440a      	add	r2, r1
+ 800031a:	6812      	ldr	r2, [r2, #0]
+ 800031c:	4611      	mov	r1, r2
+ 800031e:	4618      	mov	r0, r3
+ 8000320:	f000 f8b6 	bl	8000490 <FLASH_ProgramWord>
+ 8000324:	4603      	mov	r3, r0
+ 8000326:	2b04      	cmp	r3, #4
+ 8000328:	d001      	beq.n	800032e <UpgradeFile+0x7e>
+      enterLiveLoop();
+ 800032a:	f7ff feed 	bl	8000108 <enterLiveLoop>
+  for (uint32_t offset = 0; offset < (Memory.new_version_length+3); offset+=4){
+ 800032e:	68bb      	ldr	r3, [r7, #8]
+ 8000330:	3304      	adds	r3, #4
+ 8000332:	60bb      	str	r3, [r7, #8]
+ 8000334:	4b14      	ldr	r3, [pc, #80]	@ (8000388 <UpgradeFile+0xd8>)
+ 8000336:	69db      	ldr	r3, [r3, #28]
+ 8000338:	3303      	adds	r3, #3
+ 800033a:	68ba      	ldr	r2, [r7, #8]
+ 800033c:	429a      	cmp	r2, r3
+ 800033e:	d3e3      	bcc.n	8000308 <UpgradeFile+0x58>
+  }
+  FLASH_Lock(); 
+ 8000340:	f000 f862 	bl	8000408 <FLASH_Lock>
+  
+  for (uint32_t offset = 0; offset < Memory.new_version_length; offset+=1){
+ 8000344:	2300      	movs	r3, #0
+ 8000346:	607b      	str	r3, [r7, #4]
+ 8000348:	e011      	b.n	800036e <UpgradeFile+0xbe>
+    if (*(uint8_t *)(offset + APPLICATION_ADDRESS) != *(uint8_t *)(Memory.bootLocation + offset))
+ 800034a:	687b      	ldr	r3, [r7, #4]
+ 800034c:	f103 6300 	add.w	r3, r3, #134217728	@ 0x8000000
+ 8000350:	f503 5300 	add.w	r3, r3, #8192	@ 0x2000
+ 8000354:	781a      	ldrb	r2, [r3, #0]
+ 8000356:	4b0c      	ldr	r3, [pc, #48]	@ (8000388 <UpgradeFile+0xd8>)
+ 8000358:	6959      	ldr	r1, [r3, #20]
+ 800035a:	687b      	ldr	r3, [r7, #4]
+ 800035c:	440b      	add	r3, r1
+ 800035e:	781b      	ldrb	r3, [r3, #0]
+ 8000360:	429a      	cmp	r2, r3
+ 8000362:	d001      	beq.n	8000368 <UpgradeFile+0xb8>
+      enterLiveLoop();
+ 8000364:	f7ff fed0 	bl	8000108 <enterLiveLoop>
+  for (uint32_t offset = 0; offset < Memory.new_version_length; offset+=1){
+ 8000368:	687b      	ldr	r3, [r7, #4]
+ 800036a:	3301      	adds	r3, #1
+ 800036c:	607b      	str	r3, [r7, #4]
+ 800036e:	4b06      	ldr	r3, [pc, #24]	@ (8000388 <UpgradeFile+0xd8>)
+ 8000370:	69db      	ldr	r3, [r3, #28]
+ 8000372:	687a      	ldr	r2, [r7, #4]
+ 8000374:	429a      	cmp	r2, r3
+ 8000376:	d3e8      	bcc.n	800034a <UpgradeFile+0x9a>
+  }
+  
+  
+  
+  FixMemory();
+ 8000378:	f7ff ff0a 	bl	8000190 <FixMemory>
+  
+
+}
+ 800037c:	bf00      	nop
+ 800037e:	3710      	adds	r7, #16
+ 8000380:	46bd      	mov	sp, r7
+ 8000382:	bd80      	pop	{r7, pc}
+ 8000384:	08002000 	.word	0x08002000
+ 8000388:	08000800 	.word	0x08000800
+
+0800038c <bl_main>:
+**  Abstract: Bootloader
+**===========================================================================
+*/
+
+int bl_main(void)
+{
+ 800038c:	b580      	push	{r7, lr}
+ 800038e:	b084      	sub	sp, #16
+ 8000390:	af00      	add	r7, sp, #0
+  
+  pFunction appEntry;
+  uint32_t appStack;
+   
+  if(!MemoryOK()){
+ 8000392:	f7ff febd 	bl	8000110 <MemoryOK>
+ 8000396:	4603      	mov	r3, r0
+ 8000398:	2b00      	cmp	r3, #0
+ 800039a:	d101      	bne.n	80003a0 <bl_main+0x14>
+    
+    /* Perform the update */
+    FixMemory();
+ 800039c:	f7ff fef8 	bl	8000190 <FixMemory>
+  }
+  
+  /* Check if firmware update required */
+  if (Memory.bootLocation != APPLICATION_ADDRESS)
+ 80003a0:	4b0c      	ldr	r3, [pc, #48]	@ (80003d4 <bl_main+0x48>)
+ 80003a2:	695b      	ldr	r3, [r3, #20]
+ 80003a4:	4a0c      	ldr	r2, [pc, #48]	@ (80003d8 <bl_main+0x4c>)
+ 80003a6:	4293      	cmp	r3, r2
+ 80003a8:	d001      	beq.n	80003ae <bl_main+0x22>
+    UpgradeFile();
+ 80003aa:	f7ff ff81 	bl	80002b0 <UpgradeFile>
+  
+  /* Get the application stack pointer (First entry in the application vector table) */
+  appStack = (uint32_t) *((__IO uint32_t*)APPLICATION_ADDRESS);
+ 80003ae:	4b0a      	ldr	r3, [pc, #40]	@ (80003d8 <bl_main+0x4c>)
+ 80003b0:	681b      	ldr	r3, [r3, #0]
+ 80003b2:	60fb      	str	r3, [r7, #12]
+  
+  /* Get the application entry point (Second entry in the application vector table) */
+  appEntry = (pFunction) *(__IO uint32_t*) (APPLICATION_ADDRESS + 4);
+ 80003b4:	4b09      	ldr	r3, [pc, #36]	@ (80003dc <bl_main+0x50>)
+ 80003b6:	681b      	ldr	r3, [r3, #0]
+ 80003b8:	60bb      	str	r3, [r7, #8]
+  
+  /* Reconfigure vector table offset register to match the application location */
+  SCB->VTOR = APPLICATION_ADDRESS;
+ 80003ba:	4b09      	ldr	r3, [pc, #36]	@ (80003e0 <bl_main+0x54>)
+ 80003bc:	4a06      	ldr	r2, [pc, #24]	@ (80003d8 <bl_main+0x4c>)
+ 80003be:	609a      	str	r2, [r3, #8]
+ 80003c0:	68fb      	ldr	r3, [r7, #12]
+ 80003c2:	607b      	str	r3, [r7, #4]
+  __ASM volatile ("MSR msp, %0" : : "r" (topOfMainStack) : );
+ 80003c4:	687b      	ldr	r3, [r7, #4]
+ 80003c6:	f383 8808 	msr	MSP, r3
+}
+ 80003ca:	bf00      	nop
+  
+  /* Set the application stack pointer */
+  __set_MSP(appStack);
+  
+  /* Start the application */
+  appEntry();
+ 80003cc:	68bb      	ldr	r3, [r7, #8]
+ 80003ce:	4798      	blx	r3
+  
+  while(1);
+ 80003d0:	bf00      	nop
+ 80003d2:	e7fd      	b.n	80003d0 <bl_main+0x44>
+ 80003d4:	08000800 	.word	0x08000800
+ 80003d8:	08002000 	.word	0x08002000
+ 80003dc:	08002004 	.word	0x08002004
+ 80003e0:	e000ed00 	.word	0xe000ed00
+
+080003e4 <FLASH_Unlock>:
+  * @brief  Unlocks the FLASH Program Erase Controller.
+  * @param  None
+  * @retval None
+  */
+void FLASH_Unlock(void)
+{
+ 80003e4:	b480      	push	{r7}
+ 80003e6:	af00      	add	r7, sp, #0
+  /* Authorize the FPEC Access */
+  FLASH->KEYR = FLASH_KEY1;
+ 80003e8:	4b04      	ldr	r3, [pc, #16]	@ (80003fc <FLASH_Unlock+0x18>)
+ 80003ea:	4a05      	ldr	r2, [pc, #20]	@ (8000400 <FLASH_Unlock+0x1c>)
+ 80003ec:	605a      	str	r2, [r3, #4]
+  FLASH->KEYR = FLASH_KEY2;
+ 80003ee:	4b03      	ldr	r3, [pc, #12]	@ (80003fc <FLASH_Unlock+0x18>)
+ 80003f0:	4a04      	ldr	r2, [pc, #16]	@ (8000404 <FLASH_Unlock+0x20>)
+ 80003f2:	605a      	str	r2, [r3, #4]
+}
+ 80003f4:	bf00      	nop
+ 80003f6:	46bd      	mov	sp, r7
+ 80003f8:	bc80      	pop	{r7}
+ 80003fa:	4770      	bx	lr
+ 80003fc:	40022000 	.word	0x40022000
+ 8000400:	45670123 	.word	0x45670123
+ 8000404:	cdef89ab 	.word	0xcdef89ab
+
+08000408 <FLASH_Lock>:
+  * @brief  Locks the FLASH Program Erase Controller.
+  * @param  None
+  * @retval None
+  */
+void FLASH_Lock(void)
+{
+ 8000408:	b480      	push	{r7}
+ 800040a:	af00      	add	r7, sp, #0
+  /* Set the Lock Bit to lock the FPEC and the FCR */
+  FLASH->CR |= CR_LOCK_Set;
+ 800040c:	4b04      	ldr	r3, [pc, #16]	@ (8000420 <FLASH_Lock+0x18>)
+ 800040e:	691b      	ldr	r3, [r3, #16]
+ 8000410:	4a03      	ldr	r2, [pc, #12]	@ (8000420 <FLASH_Lock+0x18>)
+ 8000412:	f043 0380 	orr.w	r3, r3, #128	@ 0x80
+ 8000416:	6113      	str	r3, [r2, #16]
+}
+ 8000418:	bf00      	nop
+ 800041a:	46bd      	mov	sp, r7
+ 800041c:	bc80      	pop	{r7}
+ 800041e:	4770      	bx	lr
+ 8000420:	40022000 	.word	0x40022000
+
+08000424 <FLASH_ErasePage>:
+  * @param  Page_Address: The page address to be erased.
+  * @retval FLASH Status: The returned value can be: FLASH_BUSY, FLASH_ERROR_PG,
+  *   FLASH_ERROR_WRP, FLASH_COMPLETE or FLASH_TIMEOUT.
+  */
+FLASH_Status FLASH_ErasePage(uint32_t Page_Address)
+{
+ 8000424:	b580      	push	{r7, lr}
+ 8000426:	b084      	sub	sp, #16
+ 8000428:	af00      	add	r7, sp, #0
+ 800042a:	6078      	str	r0, [r7, #4]
+  FLASH_Status status = FLASH_COMPLETE;
+ 800042c:	2304      	movs	r3, #4
+ 800042e:	73fb      	strb	r3, [r7, #15]
+  /* Wait for last operation to be completed */
+  status = FLASH_WaitForLastOperation(EraseTimeout);
+ 8000430:	f640 70ff 	movw	r0, #4095	@ 0xfff
+ 8000434:	f000 f8b2 	bl	800059c <FLASH_WaitForLastOperation>
+ 8000438:	4603      	mov	r3, r0
+ 800043a:	73fb      	strb	r3, [r7, #15]
+  
+  if(status == FLASH_COMPLETE)
+ 800043c:	7bfb      	ldrb	r3, [r7, #15]
+ 800043e:	2b04      	cmp	r3, #4
+ 8000440:	d11e      	bne.n	8000480 <FLASH_ErasePage+0x5c>
+  {
+    /* if the previous operation is completed, proceed to erase the page */
+    FLASH->CR|= CR_PER_Set;
+ 8000442:	4b12      	ldr	r3, [pc, #72]	@ (800048c <FLASH_ErasePage+0x68>)
+ 8000444:	691b      	ldr	r3, [r3, #16]
+ 8000446:	4a11      	ldr	r2, [pc, #68]	@ (800048c <FLASH_ErasePage+0x68>)
+ 8000448:	f043 0302 	orr.w	r3, r3, #2
+ 800044c:	6113      	str	r3, [r2, #16]
+    FLASH->AR = Page_Address;
+ 800044e:	4a0f      	ldr	r2, [pc, #60]	@ (800048c <FLASH_ErasePage+0x68>)
+ 8000450:	687b      	ldr	r3, [r7, #4]
+ 8000452:	6153      	str	r3, [r2, #20]
+    FLASH->CR|= CR_STRT_Set;
+ 8000454:	4b0d      	ldr	r3, [pc, #52]	@ (800048c <FLASH_ErasePage+0x68>)
+ 8000456:	691b      	ldr	r3, [r3, #16]
+ 8000458:	4a0c      	ldr	r2, [pc, #48]	@ (800048c <FLASH_ErasePage+0x68>)
+ 800045a:	f043 0340 	orr.w	r3, r3, #64	@ 0x40
+ 800045e:	6113      	str	r3, [r2, #16]
+
+    /* Wait for last operation to be completed */
+    status = FLASH_WaitForLastOperation(EraseTimeout);
+ 8000460:	f640 70ff 	movw	r0, #4095	@ 0xfff
+ 8000464:	f000 f89a 	bl	800059c <FLASH_WaitForLastOperation>
+ 8000468:	4603      	mov	r3, r0
+ 800046a:	73fb      	strb	r3, [r7, #15]
+    if(status != FLASH_TIMEOUT)
+ 800046c:	7bfb      	ldrb	r3, [r7, #15]
+ 800046e:	2b05      	cmp	r3, #5
+ 8000470:	d006      	beq.n	8000480 <FLASH_ErasePage+0x5c>
+    {
+      /* if the erase operation is completed, disable the PER Bit */
+      FLASH->CR &= CR_PER_Reset;
+ 8000472:	4b06      	ldr	r3, [pc, #24]	@ (800048c <FLASH_ErasePage+0x68>)
+ 8000474:	691a      	ldr	r2, [r3, #16]
+ 8000476:	4905      	ldr	r1, [pc, #20]	@ (800048c <FLASH_ErasePage+0x68>)
+ 8000478:	f641 73fd 	movw	r3, #8189	@ 0x1ffd
+ 800047c:	4013      	ands	r3, r2
+ 800047e:	610b      	str	r3, [r1, #16]
+    }
+  }
+  /* Return the Erase Status */
+  return status;
+ 8000480:	7bfb      	ldrb	r3, [r7, #15]
+}
+ 8000482:	4618      	mov	r0, r3
+ 8000484:	3710      	adds	r7, #16
+ 8000486:	46bd      	mov	sp, r7
+ 8000488:	bd80      	pop	{r7, pc}
+ 800048a:	bf00      	nop
+ 800048c:	40022000 	.word	0x40022000
+
+08000490 <FLASH_ProgramWord>:
+  * @param  Data: specifies the data to be programmed.
+  * @retval FLASH Status: The returned value can be: FLASH_ERROR_PG,
+  *   FLASH_ERROR_WRP, FLASH_COMPLETE or FLASH_TIMEOUT.
+  */
+FLASH_Status FLASH_ProgramWord(uint32_t Address, uint32_t Data)
+{
+ 8000490:	b580      	push	{r7, lr}
+ 8000492:	b084      	sub	sp, #16
+ 8000494:	af00      	add	r7, sp, #0
+ 8000496:	6078      	str	r0, [r7, #4]
+ 8000498:	6039      	str	r1, [r7, #0]
+  FLASH_Status status = FLASH_COMPLETE;
+ 800049a:	2304      	movs	r3, #4
+ 800049c:	73fb      	strb	r3, [r7, #15]
+  __IO uint32_t tmp = 0;
+ 800049e:	2300      	movs	r3, #0
+ 80004a0:	60bb      	str	r3, [r7, #8]
+
+  /* Wait for last operation to be completed */
+  status = FLASH_WaitForLastOperation(ProgramTimeout);
+ 80004a2:	200f      	movs	r0, #15
+ 80004a4:	f000 f87a 	bl	800059c <FLASH_WaitForLastOperation>
+ 80004a8:	4603      	mov	r3, r0
+ 80004aa:	73fb      	strb	r3, [r7, #15]
+
+  if(status == FLASH_COMPLETE)
+ 80004ac:	7bfb      	ldrb	r3, [r7, #15]
+ 80004ae:	2b04      	cmp	r3, #4
+ 80004b0:	d133      	bne.n	800051a <FLASH_ProgramWord+0x8a>
+  {
+    /* if the previous operation is completed, proceed to program the new first
+    half word */
+    FLASH->CR |= CR_PG_Set;
+ 80004b2:	4b1c      	ldr	r3, [pc, #112]	@ (8000524 <FLASH_ProgramWord+0x94>)
+ 80004b4:	691b      	ldr	r3, [r3, #16]
+ 80004b6:	4a1b      	ldr	r2, [pc, #108]	@ (8000524 <FLASH_ProgramWord+0x94>)
+ 80004b8:	f043 0301 	orr.w	r3, r3, #1
+ 80004bc:	6113      	str	r3, [r2, #16]
+
+    *(__IO uint16_t*)Address = (uint16_t)Data;
+ 80004be:	687b      	ldr	r3, [r7, #4]
+ 80004c0:	683a      	ldr	r2, [r7, #0]
+ 80004c2:	b292      	uxth	r2, r2
+ 80004c4:	801a      	strh	r2, [r3, #0]
+    /* Wait for last operation to be completed */
+    status = FLASH_WaitForLastOperation(ProgramTimeout);
+ 80004c6:	200f      	movs	r0, #15
+ 80004c8:	f000 f868 	bl	800059c <FLASH_WaitForLastOperation>
+ 80004cc:	4603      	mov	r3, r0
+ 80004ce:	73fb      	strb	r3, [r7, #15]
+
+    if(status == FLASH_COMPLETE)
+ 80004d0:	7bfb      	ldrb	r3, [r7, #15]
+ 80004d2:	2b04      	cmp	r3, #4
+ 80004d4:	d117      	bne.n	8000506 <FLASH_ProgramWord+0x76>
+    {
+      /* if the previous operation is completed, proceed to program the new second
+      half word */
+      tmp = Address + 2;
+ 80004d6:	687b      	ldr	r3, [r7, #4]
+ 80004d8:	3302      	adds	r3, #2
+ 80004da:	60bb      	str	r3, [r7, #8]
+
+      *(__IO uint16_t*) tmp = Data >> 16;
+ 80004dc:	683b      	ldr	r3, [r7, #0]
+ 80004de:	0c1a      	lsrs	r2, r3, #16
+ 80004e0:	68bb      	ldr	r3, [r7, #8]
+ 80004e2:	b292      	uxth	r2, r2
+ 80004e4:	801a      	strh	r2, [r3, #0]
+
+      /* Wait for last operation to be completed */
+      status = FLASH_WaitForLastOperation(ProgramTimeout);
+ 80004e6:	200f      	movs	r0, #15
+ 80004e8:	f000 f858 	bl	800059c <FLASH_WaitForLastOperation>
+ 80004ec:	4603      	mov	r3, r0
+ 80004ee:	73fb      	strb	r3, [r7, #15]
+
+      if(status != FLASH_TIMEOUT)
+ 80004f0:	7bfb      	ldrb	r3, [r7, #15]
+ 80004f2:	2b05      	cmp	r3, #5
+ 80004f4:	d011      	beq.n	800051a <FLASH_ProgramWord+0x8a>
+      {
+        /* Disable the PG Bit */
+        FLASH->CR &= CR_PG_Reset;
+ 80004f6:	4b0b      	ldr	r3, [pc, #44]	@ (8000524 <FLASH_ProgramWord+0x94>)
+ 80004f8:	691a      	ldr	r2, [r3, #16]
+ 80004fa:	490a      	ldr	r1, [pc, #40]	@ (8000524 <FLASH_ProgramWord+0x94>)
+ 80004fc:	f641 73fe 	movw	r3, #8190	@ 0x1ffe
+ 8000500:	4013      	ands	r3, r2
+ 8000502:	610b      	str	r3, [r1, #16]
+ 8000504:	e009      	b.n	800051a <FLASH_ProgramWord+0x8a>
+      }
+    }
+    else
+    {
+      if (status != FLASH_TIMEOUT)
+ 8000506:	7bfb      	ldrb	r3, [r7, #15]
+ 8000508:	2b05      	cmp	r3, #5
+ 800050a:	d006      	beq.n	800051a <FLASH_ProgramWord+0x8a>
+      {
+        /* Disable the PG Bit */
+        FLASH->CR &= CR_PG_Reset;
+ 800050c:	4b05      	ldr	r3, [pc, #20]	@ (8000524 <FLASH_ProgramWord+0x94>)
+ 800050e:	691a      	ldr	r2, [r3, #16]
+ 8000510:	4904      	ldr	r1, [pc, #16]	@ (8000524 <FLASH_ProgramWord+0x94>)
+ 8000512:	f641 73fe 	movw	r3, #8190	@ 0x1ffe
+ 8000516:	4013      	ands	r3, r2
+ 8000518:	610b      	str	r3, [r1, #16]
+      }
+     }
+  }
+  /* Return the Program Status */
+  return status;
+ 800051a:	7bfb      	ldrb	r3, [r7, #15]
+}
+ 800051c:	4618      	mov	r0, r3
+ 800051e:	3710      	adds	r7, #16
+ 8000520:	46bd      	mov	sp, r7
+ 8000522:	bd80      	pop	{r7, pc}
+ 8000524:	40022000 	.word	0x40022000
+
+08000528 <FLASH_ClearFlag>:
+  *     @arg FLASH_FLAG_WRPRTERR: FLASH Write protected error flag
+  *     @arg FLASH_FLAG_EOP: FLASH End of Operation flag
+  * @retval None
+  */
+void FLASH_ClearFlag(uint16_t FLASH_FLAG)
+{
+ 8000528:	b480      	push	{r7}
+ 800052a:	b083      	sub	sp, #12
+ 800052c:	af00      	add	r7, sp, #0
+ 800052e:	4603      	mov	r3, r0
+ 8000530:	80fb      	strh	r3, [r7, #6]
+  /* Clear the flags */
+  FLASH->SR = FLASH_FLAG;
+ 8000532:	4a04      	ldr	r2, [pc, #16]	@ (8000544 <FLASH_ClearFlag+0x1c>)
+ 8000534:	88fb      	ldrh	r3, [r7, #6]
+ 8000536:	60d3      	str	r3, [r2, #12]
+}
+ 8000538:	bf00      	nop
+ 800053a:	370c      	adds	r7, #12
+ 800053c:	46bd      	mov	sp, r7
+ 800053e:	bc80      	pop	{r7}
+ 8000540:	4770      	bx	lr
+ 8000542:	bf00      	nop
+ 8000544:	40022000 	.word	0x40022000
+
+08000548 <FLASH_GetStatus>:
+  * @param  None
+  * @retval FLASH Status: The returned value can be: FLASH_BUSY, FLASH_ERROR_PG,
+  *   FLASH_ERROR_WRP or FLASH_COMPLETE
+  */
+FLASH_Status FLASH_GetStatus(void)
+{
+ 8000548:	b480      	push	{r7}
+ 800054a:	b083      	sub	sp, #12
+ 800054c:	af00      	add	r7, sp, #0
+  FLASH_Status flashstatus = FLASH_COMPLETE;
+ 800054e:	2304      	movs	r3, #4
+ 8000550:	71fb      	strb	r3, [r7, #7]
+  
+  if((FLASH->SR & FLASH_FLAG_BSY) == FLASH_FLAG_BSY)
+ 8000552:	4b11      	ldr	r3, [pc, #68]	@ (8000598 <FLASH_GetStatus+0x50>)
+ 8000554:	68db      	ldr	r3, [r3, #12]
+ 8000556:	f003 0301 	and.w	r3, r3, #1
+ 800055a:	2b01      	cmp	r3, #1
+ 800055c:	d102      	bne.n	8000564 <FLASH_GetStatus+0x1c>
+  {
+    flashstatus = FLASH_BUSY;
+ 800055e:	2301      	movs	r3, #1
+ 8000560:	71fb      	strb	r3, [r7, #7]
+ 8000562:	e013      	b.n	800058c <FLASH_GetStatus+0x44>
+  }
+  else
+  {
+    if((FLASH->SR & FLASH_FLAG_PGERR) != 0)
+ 8000564:	4b0c      	ldr	r3, [pc, #48]	@ (8000598 <FLASH_GetStatus+0x50>)
+ 8000566:	68db      	ldr	r3, [r3, #12]
+ 8000568:	f003 0304 	and.w	r3, r3, #4
+ 800056c:	2b00      	cmp	r3, #0
+ 800056e:	d002      	beq.n	8000576 <FLASH_GetStatus+0x2e>
+    {
+      flashstatus = FLASH_ERROR_PG;
+ 8000570:	2302      	movs	r3, #2
+ 8000572:	71fb      	strb	r3, [r7, #7]
+ 8000574:	e00a      	b.n	800058c <FLASH_GetStatus+0x44>
+    }
+    else
+    {
+      if((FLASH->SR & FLASH_FLAG_WRPRTERR) != 0 )
+ 8000576:	4b08      	ldr	r3, [pc, #32]	@ (8000598 <FLASH_GetStatus+0x50>)
+ 8000578:	68db      	ldr	r3, [r3, #12]
+ 800057a:	f003 0310 	and.w	r3, r3, #16
+ 800057e:	2b00      	cmp	r3, #0
+ 8000580:	d002      	beq.n	8000588 <FLASH_GetStatus+0x40>
+      {
+        flashstatus = FLASH_ERROR_WRP;
+ 8000582:	2303      	movs	r3, #3
+ 8000584:	71fb      	strb	r3, [r7, #7]
+ 8000586:	e001      	b.n	800058c <FLASH_GetStatus+0x44>
+      }
+      else
+      {
+        flashstatus = FLASH_COMPLETE;
+ 8000588:	2304      	movs	r3, #4
+ 800058a:	71fb      	strb	r3, [r7, #7]
+      }
+    }
+  }
+  /* Return the Flash Status */
+  return flashstatus;
+ 800058c:	79fb      	ldrb	r3, [r7, #7]
+}
+ 800058e:	4618      	mov	r0, r3
+ 8000590:	370c      	adds	r7, #12
+ 8000592:	46bd      	mov	sp, r7
+ 8000594:	bc80      	pop	{r7}
+ 8000596:	4770      	bx	lr
+ 8000598:	40022000 	.word	0x40022000
+
+0800059c <FLASH_WaitForLastOperation>:
+  * @param  Timeout: FLASH progamming Timeout
+  * @retval FLASH Status: The returned value can be: FLASH_ERROR_PG,
+  *   FLASH_ERROR_WRP, FLASH_COMPLETE or FLASH_TIMEOUT.
+  */
+FLASH_Status FLASH_WaitForLastOperation(uint32_t Timeout)
+{
+ 800059c:	b580      	push	{r7, lr}
+ 800059e:	b084      	sub	sp, #16
+ 80005a0:	af00      	add	r7, sp, #0
+ 80005a2:	6078      	str	r0, [r7, #4]
+  FLASH_Status status = FLASH_COMPLETE;
+ 80005a4:	2304      	movs	r3, #4
+ 80005a6:	73fb      	strb	r3, [r7, #15]
+
+  /* Check for the Flash Status */
+  status = FLASH_GetStatus();
+ 80005a8:	f7ff ffce 	bl	8000548 <FLASH_GetStatus>
+ 80005ac:	4603      	mov	r3, r0
+ 80005ae:	73fb      	strb	r3, [r7, #15]
+  /* Wait for a Flash operation to complete or a TIMEOUT to occur */
+  while((status == FLASH_BUSY) && (Timeout != 0x00))
+ 80005b0:	e008      	b.n	80005c4 <FLASH_WaitForLastOperation+0x28>
+  {
+    delay();
+ 80005b2:	f000 f817 	bl	80005e4 <delay>
+    status = FLASH_GetStatus();
+ 80005b6:	f7ff ffc7 	bl	8000548 <FLASH_GetStatus>
+ 80005ba:	4603      	mov	r3, r0
+ 80005bc:	73fb      	strb	r3, [r7, #15]
+    Timeout--;
+ 80005be:	687b      	ldr	r3, [r7, #4]
+ 80005c0:	3b01      	subs	r3, #1
+ 80005c2:	607b      	str	r3, [r7, #4]
+  while((status == FLASH_BUSY) && (Timeout != 0x00))
+ 80005c4:	7bfb      	ldrb	r3, [r7, #15]
+ 80005c6:	2b01      	cmp	r3, #1
+ 80005c8:	d102      	bne.n	80005d0 <FLASH_WaitForLastOperation+0x34>
+ 80005ca:	687b      	ldr	r3, [r7, #4]
+ 80005cc:	2b00      	cmp	r3, #0
+ 80005ce:	d1f0      	bne.n	80005b2 <FLASH_WaitForLastOperation+0x16>
+  }
+  if(Timeout == 0x00 )
+ 80005d0:	687b      	ldr	r3, [r7, #4]
+ 80005d2:	2b00      	cmp	r3, #0
+ 80005d4:	d101      	bne.n	80005da <FLASH_WaitForLastOperation+0x3e>
+  {
+    status = FLASH_TIMEOUT;
+ 80005d6:	2305      	movs	r3, #5
+ 80005d8:	73fb      	strb	r3, [r7, #15]
+  }
+  /* Return the operation status */
+  return status;
+ 80005da:	7bfb      	ldrb	r3, [r7, #15]
+}
+ 80005dc:	4618      	mov	r0, r3
+ 80005de:	3710      	adds	r7, #16
+ 80005e0:	46bd      	mov	sp, r7
+ 80005e2:	bd80      	pop	{r7, pc}
+
+080005e4 <delay>:
+  * @brief  Inserts a time delay.
+  * @param  None
+  * @retval None
+  */
+static void delay(void)
+{
+ 80005e4:	b480      	push	{r7}
+ 80005e6:	b083      	sub	sp, #12
+ 80005e8:	af00      	add	r7, sp, #0
+  __IO uint32_t i = 0;
+ 80005ea:	2300      	movs	r3, #0
+ 80005ec:	607b      	str	r3, [r7, #4]
+  for(i = 0xFF; i != 0; i--)
+ 80005ee:	23ff      	movs	r3, #255	@ 0xff
+ 80005f0:	607b      	str	r3, [r7, #4]
+ 80005f2:	e002      	b.n	80005fa <delay+0x16>
+ 80005f4:	687b      	ldr	r3, [r7, #4]
+ 80005f6:	3b01      	subs	r3, #1
+ 80005f8:	607b      	str	r3, [r7, #4]
+ 80005fa:	687b      	ldr	r3, [r7, #4]
+ 80005fc:	2b00      	cmp	r3, #0
+ 80005fe:	d1f9      	bne.n	80005f4 <delay+0x10>
+  {
+  }
+}
+ 8000600:	bf00      	nop
+ 8000602:	bf00      	nop
+ 8000604:	370c      	adds	r7, #12
+ 8000606:	46bd      	mov	sp, r7
+ 8000608:	bc80      	pop	{r7}
+ 800060a:	4770      	bx	lr
+
+0800060c <memset>:
+ 800060c:	4603      	mov	r3, r0
+ 800060e:	4402      	add	r2, r0
+ 8000610:	4293      	cmp	r3, r2
+ 8000612:	d100      	bne.n	8000616 <memset+0xa>
+ 8000614:	4770      	bx	lr
+ 8000616:	f803 1b01 	strb.w	r1, [r3], #1
+ 800061a:	e7f9      	b.n	8000610 <memset+0x4>
+
+0800061c <__libc_init_array>:
+ 800061c:	b570      	push	{r4, r5, r6, lr}
+ 800061e:	2600      	movs	r6, #0
+ 8000620:	4d0c      	ldr	r5, [pc, #48]	@ (8000654 <__libc_init_array+0x38>)
+ 8000622:	4c0d      	ldr	r4, [pc, #52]	@ (8000658 <__libc_init_array+0x3c>)
+ 8000624:	1b64      	subs	r4, r4, r5
+ 8000626:	10a4      	asrs	r4, r4, #2
+ 8000628:	42a6      	cmp	r6, r4
+ 800062a:	d109      	bne.n	8000640 <__libc_init_array+0x24>
+ 800062c:	f000 f81a 	bl	8000664 <_init>
+ 8000630:	2600      	movs	r6, #0
+ 8000632:	4d0a      	ldr	r5, [pc, #40]	@ (800065c <__libc_init_array+0x40>)
+ 8000634:	4c0a      	ldr	r4, [pc, #40]	@ (8000660 <__libc_init_array+0x44>)
+ 8000636:	1b64      	subs	r4, r4, r5
+ 8000638:	10a4      	asrs	r4, r4, #2
+ 800063a:	42a6      	cmp	r6, r4
+ 800063c:	d105      	bne.n	800064a <__libc_init_array+0x2e>
+ 800063e:	bd70      	pop	{r4, r5, r6, pc}
+ 8000640:	f855 3b04 	ldr.w	r3, [r5], #4
+ 8000644:	4798      	blx	r3
+ 8000646:	3601      	adds	r6, #1
+ 8000648:	e7ee      	b.n	8000628 <__libc_init_array+0xc>
+ 800064a:	f855 3b04 	ldr.w	r3, [r5], #4
+ 800064e:	4798      	blx	r3
+ 8000650:	3601      	adds	r6, #1
+ 8000652:	e7f2      	b.n	800063a <__libc_init_array+0x1e>
+ 8000654:	080006ac 	.word	0x080006ac
+ 8000658:	080006ac 	.word	0x080006ac
+ 800065c:	080006ac 	.word	0x080006ac
+ 8000660:	080006b0 	.word	0x080006b0
+
+08000664 <_init>:
+ 8000664:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 8000666:	bf00      	nop
+ 8000668:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 800066a:	bc08      	pop	{r3}
+ 800066c:	469e      	mov	lr, r3
+ 800066e:	4770      	bx	lr
+
+08000670 <_fini>:
+ 8000670:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 8000672:	bf00      	nop
+ 8000674:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8000676:	bc08      	pop	{r3}
+ 8000678:	469e      	mov	lr, r3
+ 800067a:	4770      	bx	lr

@@ -1,0 +1,12 @@
+../src/communicationCenter/ethernet/messageQueue.c:32:6:incAndSetRxIndex	2
+../src/communicationCenter/ethernet/messageQueue.c:45:6:initBuffer	2
+../src/communicationCenter/ethernet/messageQueue.c:72:6:initInBuffer	1
+../src/communicationCenter/ethernet/messageQueue.c:86:6:initOutBuffer	1
+../src/communicationCenter/ethernet/messageQueue.c:103:14:getNextRxPacketIndex	7
+../src/communicationCenter/ethernet/messageQueue.c:149:5:handleIncomingPackets	2
+../src/communicationCenter/ethernet/messageQueue.c:167:5:handleIncomingPacket	9
+../src/communicationCenter/ethernet/messageQueue.c:215:5:initializeTransmitBuffers	2
+../src/communicationCenter/ethernet/messageQueue.c:231:5:initializeReceiveBuffers	2
+../src/communicationCenter/ethernet/messageQueue.c:249:7:getFreeOutPacket	2
+../src/communicationCenter/ethernet/messageQueue.c:266:13:ethernetSendPacket	2
+../src/communicationCenter/ethernet/messageQueue.c:283:5:sendCurOutPacket	2

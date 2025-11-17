@@ -1,0 +1,6 @@
+../src/communicationCenter/ethernet/ipLayer.cpp:29:1:IPLayer::IPLayer(Layer3&, Layer3&, CommunicationCenter&)	24	static
+../src/communicationCenter/ethernet/ipLayer.cpp:87:5:int IPLayer::handleICMPFrame(const IPFrame&)	40	static
+../src/communicationCenter/ethernet/ipLayer.cpp:64:5:int IPLayer::handleIPFrame(InFrame&)	40	static
+../src/communicationCenter/ethernet/ipLayer.cpp:42:5:int IPLayer::handleFrame(InFrame&)	16	static
+../src/communicationCenter/ethernet/ipLayer.cpp:118:6:void IPLayer::periodicCall()	8	static
+../src/communicationCenter/ethernet/ipLayer.cpp:126:16:const MACAddr& IPLayer::getMacAddr(uint32_t)	8	static

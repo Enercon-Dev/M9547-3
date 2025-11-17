@@ -1,0 +1,49 @@
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\bin\Debug\M9547.exe.config
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\bin\Debug\M9547.exe.manifest
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\bin\Debug\M9547.application
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\bin\Debug\M9547.exe
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\bin\Debug\M9547.pdb
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\bin\Debug\IPAddressControlLib.dll
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\bin\Debug\Tftp.Net.dll
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.csproj.AssemblyReference.cache
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.CalibrateForm.resources
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.ChoosePDUs.resources
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.Installer.resources
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\Data.Led.resources
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.Form1.resources
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.GROUP.resources
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.Properties.Resources.resources
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.OUTPUT.resources
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.Switch.Switch_Res.resources
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.csproj.GenerateResource.cache
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.csproj.CoreCompileInputs.cache
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.exe.manifest
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.application
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.csproj.Up2Date
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.exe
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.pdb
+C:\Projects\Embedded\Projects From Git\M9547\GUI\Main\obj\Debug\M9547.exe.config
+C:\Projects\Embedded\M9547\GUI\Main\bin\Debug\M9547.exe.config
+C:\Projects\Embedded\M9547\GUI\Main\bin\Debug\M9547.exe.manifest
+C:\Projects\Embedded\M9547\GUI\Main\bin\Debug\M9547.application
+C:\Projects\Embedded\M9547\GUI\Main\bin\Debug\M9547.exe
+C:\Projects\Embedded\M9547\GUI\Main\bin\Debug\M9547.pdb
+C:\Projects\Embedded\M9547\GUI\Main\bin\Debug\IPAddressControlLib.dll
+C:\Projects\Embedded\M9547\GUI\Main\bin\Debug\Tftp.Net.dll
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.csproj.AssemblyReference.cache
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.CalibrateForm.resources
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.ChoosePDUs.resources
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.Installer.resources
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\Data.Led.resources
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.Form1.resources
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.GROUP.resources
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.Properties.Resources.resources
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.OUTPUT.resources
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.Switch.Switch_Res.resources
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.csproj.GenerateResource.cache
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.csproj.CoreCompileInputs.cache
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.exe.manifest
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.application
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.csproj.Up2Date
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.exe
+C:\Projects\Embedded\M9547\GUI\Main\obj\Debug\M9547.pdb

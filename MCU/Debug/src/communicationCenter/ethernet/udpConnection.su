@@ -1,0 +1,8 @@
+../src/communicationCenter/ethernet/udpConnection.h:30:20:virtual uint32_t UDPConnection::getOtherIP() const	0	static
+../src/communicationCenter/ethernet/udpConnection.cpp:94:6:virtual bool UDPConnection::isClosed() const	0	static
+../src/communicationCenter/ethernet/udpConnection.cpp:35:5:virtual int UDPConnection::handleIncomingMsg(uint32_t, uint32_t, const unsigned char*, unsigned int)	40	static
+../src/communicationCenter/ethernet/udpConnection.cpp:22:1:UDPConnection::UDPConnection(BidirectionalBuffer&, Layer3&)	4	static
+../src/communicationCenter/ethernet/udpConnection.cpp:102:6:void UDPConnection::closeObject()	8	static
+../src/communicationCenter/ethernet/udpConnection.cpp:115:6:void UDPConnection::openObject(uint16_t, uint16_t, uint32_t)	24	static
+../src/communicationCenter/ethernet/udpConnection.cpp:143:6:void UDPConnection::sendUDPMessage()	48	static
+../src/communicationCenter/ethernet/udpConnection.cpp:79:6:virtual void UDPConnection::periodicCall()	8	static

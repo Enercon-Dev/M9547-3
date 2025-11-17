@@ -1,0 +1,230 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projects\\Embedded\\M9547\\GUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|C:\\Projects\\Embedded\\M9547\\GUI\\main\\m9547.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\m9547.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|C:\\Projects\\Embedded\\M9547\\GUI\\main\\m9547.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\m9547.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|C:\\Projects\\Embedded\\M9547\\GUI\\main\\windhcplib\\dhcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\windhcplib\\dhcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|C:\\Projects\\Embedded\\M9547\\GUI\\main\\simpleserver\\simpleserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\simpleserver\\simpleserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|C:\\Projects\\Embedded\\M9547\\GUI\\main\\simpleserver\\channel\\transferchannelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\simpleserver\\channel\\transferchannelfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|c:\\projects\\embedded\\m9547\\gui\\main\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|c:\\projects\\embedded\\m9547\\gui\\main\\data\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\data\\commands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|C:\\Projects\\Embedded\\M9547\\GUI\\main\\output.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\output.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|C:\\Projects\\Embedded\\M9547\\GUI\\main\\output.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\output.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|C:\\Projects\\Embedded\\M9547\\GUI\\main\\output.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\output.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|C:\\Projects\\Embedded\\M9547\\GUI\\main\\m9547.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\m9547.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|C:\\Projects\\Embedded\\M9547\\GUI\\main\\m9547.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}|Main\\M9547.csproj|solutionrelative:main\\m9547.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 14,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "Main\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "Main\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T11:07:03.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Commands.cs",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\Data\\Commands.cs",
+              "RelativeDocumentMoniker": "Main\\Data\\Commands.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\Data\\Commands.cs",
+              "RelativeToolTip": "Main\\Data\\Commands.cs",
+              "ViewState": "AgIAABIEAAAAAAAAAAAwwCMEAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T07:15:34.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OUTPUT.designer.cs",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\OUTPUT.designer.cs",
+              "RelativeDocumentMoniker": "Main\\OUTPUT.designer.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\OUTPUT.designer.cs",
+              "RelativeToolTip": "Main\\OUTPUT.designer.cs",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAcwNMAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T15:50:10.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OUTPUT.cs",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\OUTPUT.cs",
+              "RelativeDocumentMoniker": "Main\\OUTPUT.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\OUTPUT.cs",
+              "RelativeToolTip": "Main\\OUTPUT.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAwwGYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T15:49:35.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OUTPUT.cs [Design]",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\OUTPUT.cs",
+              "RelativeDocumentMoniker": "Main\\OUTPUT.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\OUTPUT.cs [Design]",
+              "RelativeToolTip": "Main\\OUTPUT.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T15:49:14.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DhcpServer.cs",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\WinDHCPLib\\DhcpServer.cs",
+              "RelativeDocumentMoniker": "Main\\WinDHCPLib\\DhcpServer.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\WinDHCPLib\\DhcpServer.cs",
+              "RelativeToolTip": "Main\\WinDHCPLib\\DhcpServer.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T07:43:34.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TransferChannelFactory.cs",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\SimpleServer\\Channel\\TransferChannelFactory.cs",
+              "RelativeDocumentMoniker": "Main\\SimpleServer\\Channel\\TransferChannelFactory.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\SimpleServer\\Channel\\TransferChannelFactory.cs",
+              "RelativeToolTip": "Main\\SimpleServer\\Channel\\TransferChannelFactory.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAewCEAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T07:42:44.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SimpleServer.cs",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\SimpleServer\\SimpleServer.cs",
+              "RelativeDocumentMoniker": "Main\\SimpleServer\\SimpleServer.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\SimpleServer\\SimpleServer.cs",
+              "RelativeToolTip": "Main\\SimpleServer\\SimpleServer.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAgwEMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T07:39:46.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "M9547.cs",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\M9547.cs",
+              "RelativeDocumentMoniker": "Main\\M9547.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\M9547.cs",
+              "RelativeToolTip": "Main\\M9547.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwDQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T07:03:30.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "M9547.Designer.cs",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\M9547.Designer.cs",
+              "RelativeDocumentMoniker": "Main\\M9547.Designer.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\M9547.Designer.cs",
+              "RelativeToolTip": "Main\\M9547.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T13:30:50.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "M9547.resx",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\M9547.resx",
+              "RelativeDocumentMoniker": "Main\\M9547.resx",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\M9547.resx",
+              "RelativeToolTip": "Main\\M9547.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-05-18T13:30:49.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "M9547.cs [Design]",
+              "DocumentMoniker": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\M9547.cs",
+              "RelativeDocumentMoniker": "Main\\M9547.cs",
+              "ToolTip": "C:\\Projects\\Embedded\\M9547\\GUI\\Main\\M9547.cs [Design]",
+              "RelativeToolTip": "Main\\M9547.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T13:03:20.008Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

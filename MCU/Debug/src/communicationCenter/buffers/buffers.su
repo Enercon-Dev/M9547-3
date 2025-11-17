@@ -1,0 +1,22 @@
+../src/communicationCenter/buffers/buffers.cpp:93:6:void BidirectionalBuffer::advanceReadTop()	0	static
+../src/communicationCenter/buffers/buffers.cpp:108:1:Buffer::Buffer(char*, bool)	0	static
+../src/communicationCenter/buffers/buffers.cpp:74:1:BidirectionalBuffer::BidirectionalBuffer(TCPPortTypes)	16	static
+../src/communicationCenter/buffers/buffers.cpp:121:6:void Buffer::reset()	0	static
+../src/communicationCenter/buffers/buffers.cpp:85:6:void BidirectionalBuffer::reset()	8	static
+../src/communicationCenter/buffers/buffers.cpp:142:14:unsigned int Buffer::getFreeSize() const	0	static
+../src/communicationCenter/buffers/buffers.cpp:154:14:unsigned int Buffer::getUnreadSize() const	0	static
+../src/communicationCenter/buffers/buffers.cpp:167:14:unsigned int Buffer::getDataSize() const	0	static
+../src/communicationCenter/buffers/buffers.cpp:181:6:void Buffer::writeLargeChar(char)	0	static
+../src/communicationCenter/buffers/buffers.cpp:201:6:void Buffer::writeChar(char)	8	static
+../src/communicationCenter/buffers/buffers.cpp:225:6:void Buffer::writeShort(uint16_t)	16	static
+../src/communicationCenter/buffers/buffers.cpp:235:5:int Buffer::writeNChar(char, int)	24	static
+../src/communicationCenter/buffers/buffers.cpp:262:5:int Buffer::readSmallChar()	0	static
+../src/communicationCenter/buffers/buffers.cpp:281:5:int Buffer::readChar()	8	static
+../src/communicationCenter/buffers/buffers.cpp:300:5:int Buffer::readShort()	16	static
+../src/communicationCenter/buffers/buffers.cpp:313:5:int Buffer::writeBlock(const void*, unsigned int)	32	static
+../src/communicationCenter/buffers/buffers.cpp:366:5:int Buffer::readBlock(char*, unsigned int, unsigned int) const	32	static
+../src/communicationCenter/buffers/buffers.cpp:357:5:int Buffer::readBlock(char*, unsigned int) const	8	static
+../src/communicationCenter/buffers/buffers.cpp:409:6:void Buffer::advanceRead(unsigned int)	4	static
+../src/communicationCenter/buffers/buffers.cpp:427:6:void Buffer::advanceReadTop()	0	static
+../src/communicationCenter/buffers/buffers.cpp:435:6:void Buffer::advanceReadTop(unsigned int)	4	static
+../src/communicationCenter/buffers/buffers.cpp:454:5:int Buffer::readTopBlock(unsigned char*, unsigned int, unsigned int) const	32	static

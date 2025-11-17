@@ -1,0 +1,7 @@
+../Drivers/CMSIS/Include/core_cm3.h:1762:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
+C:/Projects/Embedded/BootLoader/src/main.c:61:6:enterLiveLoop	4	static
+C:/Projects/Embedded/BootLoader/src/main.c:66:9:MemoryOK	8	static
+C:/Projects/Embedded/BootLoader/src/main.c:73:6:ResetMemory	16	static
+C:/Projects/Embedded/BootLoader/src/main.c:91:6:FixMemory	192	static
+C:/Projects/Embedded/BootLoader/src/main.c:118:6:UpgradeFile	24	static
+C:/Projects/Embedded/BootLoader/src/main.c:160:5:bl_main	24	static,ignoring_inline_asm

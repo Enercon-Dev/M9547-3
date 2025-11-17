@@ -1,0 +1,9 @@
+../CMSIS/Include/core_cm3.h:1639:22:__NVIC_SetPriority	16	static
+../src/stm32/stm32Clock.c:24:6:systemClockInit	16	static
+../src/stm32/stm32Clock.c:43:6:systemClockDisable	4	static
+../src/stm32/stm32Clock.c:52:6:SysTick_Handler	16	static
+../src/stm32/stm32Clock.c:64:10:getTimerTicks	4	static
+../src/stm32/stm32Clock.c:71:10:getTimerMilliSecs	24	static
+../src/stm32/stm32Clock.c:95:10:getTimerLease	24	static
+../src/stm32/stm32Clock.c:111:9:getLeaseTime	24	static
+../src/stm32/stm32Clock.c:132:6:wait	24	static

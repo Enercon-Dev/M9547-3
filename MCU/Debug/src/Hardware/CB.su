@@ -1,0 +1,38 @@
+../src/Hardware/CB.cpp:52:6:static void CB_Int::reorderGroups(uint8_t)	8	static
+../src/Hardware/CB.cpp:71:6:static void CB_Int::firstAndLastPosOfGroup(uint8_t, uint8_t*, uint8_t*)	8	static
+../src/Hardware/CB.cpp:98:9:static CB_Int* CB_Int::Select(uint8_t)	8	static
+../src/Hardware/CB.cpp:27:13:ErrorStatus CB_Int::setGroup(uint8_t)	8	static
+../src/Hardware/CB.cpp:105:9:static CB_Int* CB_Int::SelectOutput(uint8_t)	8	static
+../src/Hardware/CB.cpp:149:13:ErrorStatus CB_Int::SetConfig(uint16_t, uint16_t, uint16_t)	0	static
+../src/Hardware/CB.cpp:159:13:ErrorStatus CB_Int::Get_Config(Raw_Config_t*)	0	static
+../src/Hardware/CB.cpp:168:9:static uint8_t CB_Int::getGroupOfSpecificCB(uint8_t)	0	static
+../src/Hardware/CB.cpp:177:9:static uint16_t CB_Int::HandleGetStatusSWState()	0	static
+../src/Hardware/CB.cpp:189:9:static uint16_t CB_Int::HandleGetStatusSWCmd()	0	static
+../src/Hardware/CB.cpp:200:6:static void CB_Int::HandleGetStatusTripStat(uint8_t*)	12	static
+../src/Hardware/CB.cpp:218:9:static uint16_t CB_Int::HandleGetStatusBtlMode()	8	static
+../src/Hardware/CB.cpp:233:6:static void CB_Int::HandleGetStatusOutVolt(int16_t*)	0	static
+../src/Hardware/CB.cpp:243:6:static void CB_Int::HandleGetStatusOutCurr(int16_t*)	0	static
+../src/Hardware/CB.cpp:253:6:static void CB_Int::HandleGetStatusChannelGroup(uint8_t*)	0	static
+../src/Hardware/CB.cpp:261:6:void CB_Int::HandleSetSingleOutput(CB_En_t)	0	static
+../src/Hardware/CB.cpp:270:6:void CB_Int::ToggelOutput()	0	static
+../src/Hardware/CB.cpp:281:6:void CB_Int::HandleSetGroupOutput(CB_En_t)	24	static
+../src/Hardware/CB.cpp:300:6:void CB_Int::HandleSingleTripReset()	0	static
+../src/Hardware/CB.cpp:311:6:void CB_Int::HandleGroupTripReset()	0	static
+../src/Hardware/CB.cpp:321:6:void CB_Int::HandleSetSingleBattle(uint8_t)	0	static
+../src/Hardware/CB.cpp:330:6:void CB_Int::HandleSetGroupBattle(uint8_t)	0	static
+../src/Hardware/CB.cpp:336:13:ErrorStatus CB_Int::Control(CB_En_t, uint8_t)	0	static
+../src/Hardware/CB.cpp:344:6:void CB_Int::Update_CB_Configuration(const Raw_Config_t*)	8	static
+../src/Hardware/CB.cpp:118:6:static void CB_Int::ReInit()	24	static
+../src/Hardware/CB.cpp:523:13:ErrorStatus CB_Int::Write(uint8_t, const void*, uint8_t)	48	static
+../src/Hardware/CB.cpp:535:13:ErrorStatus CB_Int::Config_Write(const CB_Config_t*)	8	static
+../src/Hardware/CB.cpp:539:13:ErrorStatus CB_Int::Control_Write(const CB_Control_t*)	8	static
+../src/Hardware/CB.cpp:543:13:ErrorStatus CB_Int::Full_Status_Request()	48	static
+../src/Hardware/CB.cpp:558:13:ErrorStatus CB_Int::Full_Status_Read(CB_Full_Status_t*) const	16	static
+../src/Hardware/CB.cpp:385:6:static void CB_Int::periodicCall(uint16_t, uint16_t)	88	static
+../src/Hardware/CB.cpp:565:13:static ErrorStatus CB_Int::GPIO_INIT()	40	static
+../src/Hardware/CB.cpp:128:13:static ErrorStatus CB_Int::Init()	24	static
+../src/Hardware/CB.cpp:581:6:void CB_Int::Power(FunctionalState)	8	static
+../src/Hardware/CB.cpp:363:6:static void CB_Int::shutdown_CBs(FunctionalState)	24	static
+../src/Hardware/CB.cpp:587:10:uint32_t CB_Int::GetOnTime()	8	static
+../src/Hardware/CB.cpp:593:10:uint32_t CB_Int::GetGroupOnTime()	8	static
+../src/Hardware/CB.cpp:599:10:uint16_t CB_Int::Get_CB_Temperature()	0	static

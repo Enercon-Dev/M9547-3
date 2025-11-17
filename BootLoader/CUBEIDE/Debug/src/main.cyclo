@@ -1,0 +1,7 @@
+../Drivers/CMSIS/Include/core_cm3.h:1762:34:__NVIC_SystemReset	1
+C:/Projects/Embedded/BootLoader/src/main.c:61:6:enterLiveLoop	1
+C:/Projects/Embedded/BootLoader/src/main.c:66:9:MemoryOK	3
+C:/Projects/Embedded/BootLoader/src/main.c:73:6:ResetMemory	4
+C:/Projects/Embedded/BootLoader/src/main.c:91:6:FixMemory	5
+C:/Projects/Embedded/BootLoader/src/main.c:118:6:UpgradeFile	9
+C:/Projects/Embedded/BootLoader/src/main.c:160:5:bl_main	3

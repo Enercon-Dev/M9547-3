@@ -1,0 +1,9 @@
+../src/communicationCenter/communicationCenter.cpp:21:1:CommunicationCenter::CommunicationCenter()	1
+../src/communicationCenter/communicationCenter.cpp:37:6:void CommunicationCenter::openCenter()	2
+../src/communicationCenter/communicationCenter.cpp:55:6:void CommunicationCenter::periodicCall(int)	3
+../src/communicationCenter/communicationCenter.cpp:79:5:int CommunicationCenter::handleLeyer2Frame(InFrame&)	1
+../src/communicationCenter/communicationCenter.cpp:87:16:const MACAddr& CommunicationCenter::getMacAddr(uint32_t)	1
+../src/communicationCenter/communicationCenter.cpp:95:6:bool CommunicationCenter::allAreClosed() const	1
+../src/communicationCenter/communicationCenter.cpp:108:6:void CommunicationCenter::closeCenter()	1
+../src/communicationCenter/communicationCenter.cpp:115:17:upgradeManager& CommunicationCenter::getUpgradeMan()	1
+../src/communicationCenter/communicationCenter.cpp:120:13:ErrorStatus MasterSlaveComm(void*, uint8_t, void*, uint8_t)	3

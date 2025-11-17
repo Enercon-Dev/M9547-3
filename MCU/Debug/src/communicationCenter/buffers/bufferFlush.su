@@ -1,0 +1,6 @@
+../src/communicationCenter/buffers/bufferFlush.cpp:20:1:BufferFlush::BufferFlush(BidirectionalBuffer&)	8	static
+../src/communicationCenter/buffers/bufferFlush.cpp:30:6:void BufferFlush::updateCriteria(const SerialBufferStreamSettings&)	8	static
+../src/communicationCenter/buffers/bufferFlush.cpp:51:6:void BufferFlush::flushBuffer()	8	static
+../src/communicationCenter/buffers/bufferFlush.cpp:61:6:void BufferFlush::limitedFlush(unsigned int)	16	static
+../src/communicationCenter/buffers/bufferFlush.cpp:76:6:void BufferFlush::testSizeLimit()	8	static
+../src/communicationCenter/buffers/bufferFlush.cpp:39:6:void BufferFlush::testFlush()	8	static

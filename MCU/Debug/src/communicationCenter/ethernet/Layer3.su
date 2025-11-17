@@ -1,0 +1,9 @@
+../src/communicationCenter/ethernet/Layer3.cpp:21:10:static uint32_t Layer3Connection::calcBaseChecksum(uint32_t, uint32_t, bool)	24	static
+../src/communicationCenter/ethernet/Layer3.cpp:53:1:Layer3::Layer3(CommunicationCenter&)	0	static
+../src/communicationCenter/ethernet/Layer3.cpp:91:6:bool Layer3::removeListener(uint16_t)	8	static
+../src/communicationCenter/ethernet/Layer3.cpp:147:6:void Layer3::periodicCall()	8	static
+../src/communicationCenter/ethernet/Layer3.cpp:171:5:int Layer3::getSocketIndex(uint16_t)	0	static
+../src/communicationCenter/ethernet/Layer3.cpp:122:5:int Layer3::handleFrame(const IPFrame&)	32	static
+../src/communicationCenter/ethernet/Layer3.cpp:162:6:bool Layer3::hasConnection(uint16_t)	8	static
+../src/communicationCenter/ethernet/Layer3.cpp:191:6:void Layer3::initArpData(Layer3SocketConnection&)	8	static
+../src/communicationCenter/ethernet/Layer3.cpp:68:6:bool Layer3::addListener(uint16_t, Layer3Connection*)	8	static

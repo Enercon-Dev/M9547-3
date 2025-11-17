@@ -1,0 +1,1 @@
+../src/stm32/macAddr.cpp:7:5:int getMacAddress(char*)	40	static

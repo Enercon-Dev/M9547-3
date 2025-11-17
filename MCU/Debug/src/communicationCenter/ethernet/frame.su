@@ -1,0 +1,23 @@
+../src/communicationCenter/ethernet/frame.cpp:24:13:void shortDelay()	8	static
+../src/communicationCenter/ethernet/frame.cpp:64:1:InFrame::InFrame(const char*, unsigned int)	16	static
+../src/communicationCenter/ethernet/frame.cpp:37:5:int processEthernetMsg(const char*, unsigned int)	48	static
+../src/communicationCenter/ethernet/frame.cpp:85:6:bool InFrame::isBroadcast() const	0	static
+../src/communicationCenter/ethernet/frame.cpp:115:10:uint16_t InFrame::readNextHostU16()	0	static
+../src/communicationCenter/ethernet/frame.cpp:97:10:uint16_t InFrame::readNextNetworkU16()	8	static
+../src/communicationCenter/ethernet/frame.cpp:106:10:uint32_t InFrame::readNextNetworkU32()	8	static
+../src/communicationCenter/ethernet/frame.cpp:130:10:uint32_t InFrame::readNextHostU32()	0	static
+../src/communicationCenter/ethernet/frame.cpp:145:13:const char* InFrame::readNextMAC()	0	static
+../src/communicationCenter/ethernet/frame.cpp:168:10:static uint32_t OutFrame::getAndIncFrameCtr()	0	static
+../src/communicationCenter/ethernet/frame.cpp:273:5:int OutFrame::writeHostU16(uint16_t)	0	static
+../src/communicationCenter/ethernet/frame.cpp:257:5:int OutFrame::writeNetworkU16(uint16_t)	8	static
+../src/communicationCenter/ethernet/frame.cpp:295:5:int OutFrame::writeHostU32(uint32_t)	0	static
+../src/communicationCenter/ethernet/frame.cpp:265:5:int OutFrame::writeNetworkU32(uint32_t)	8	static
+../src/communicationCenter/ethernet/frame.cpp:317:5:int OutFrame::writeMAC(const MACAddr&)	4	static
+../src/communicationCenter/ethernet/frame.cpp:181:1:OutFrame::OutFrame(FrameType, const MACAddr&)	16	static
+../src/communicationCenter/ethernet/frame.cpp:221:1:OutFrame::OutFrame(uint32_t, CommunicationCenter&)	16	static
+../src/communicationCenter/ethernet/frame.cpp:345:5:int OutFrame::appendData(const char*, unsigned int)	16	static
+../src/communicationCenter/ethernet/frame.cpp:377:5:int OutFrame::appendData(const Buffer&, unsigned int, unsigned int)	16	static
+../src/communicationCenter/ethernet/frame.cpp:368:5:int OutFrame::appendData(const Buffer&, unsigned int)	8	static
+../src/communicationCenter/ethernet/frame.cpp:405:6:void OutFrame::removeData(unsigned int)	0	static
+../src/communicationCenter/ethernet/frame.cpp:422:5:int OutFrame::sendMsg()	8	static
+../src/communicationCenter/ethernet/frame.cpp:453:1:cpp)	0	static

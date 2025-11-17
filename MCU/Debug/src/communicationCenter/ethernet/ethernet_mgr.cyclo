@@ -1,0 +1,15 @@
+../src/communicationCenter/ethernet/ethernet_mgr.c:72:6:ethernetConfigMIIAR	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:83:6:ethernetConfigCR	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:107:6:ethernetConfigFFR	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:123:6:ethernetConfigHTR	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:131:6:ethernetConfigFCR	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:147:13:ethernetConfigVLANTR	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:157:13:ethernetConfigDMA0MR	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:176:13:ethernetConfigDMABMR	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:191:13:ethernetConfig	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:205:13:ETH_Start	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:217:5:ethernetMACConfig	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:236:6:ETH_WKUP_IRQHandler	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:249:6:ETH_DMAReceptionCmd	2
+../src/communicationCenter/ethernet/ethernet_mgr.c:266:6:ethernetConfigMAC	1
+../src/communicationCenter/ethernet/ethernet_mgr.c:291:10:calcChecksum	5

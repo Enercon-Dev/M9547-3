@@ -1,0 +1,11 @@
+../src/main/systemManagement.cpp:31:1:SystemManagement::SystemManagement()	1
+../src/main/systemManagement.cpp:47:6:static void SystemManagement::init()	5
+../src/main/systemManagement.cpp:85:6:void SystemManagement::tryPriority0Actions()	1
+../src/main/systemManagement.cpp:94:6:void SystemManagement::tryPriority1Actions()	2
+../src/main/systemManagement.cpp:108:6:void SystemManagement::tryPriority2Actions()	12
+../src/main/systemManagement.cpp:72:6:static void SystemManagement::periodicCall()	1
+../src/main/systemManagement.cpp:151:6:bool SystemManagement::allAreClosed() const	1
+../src/main/systemManagement.cpp:159:6:void SystemManagement::doOneshots()	1
+../src/main/systemManagement.cpp:167:6:static void SystemManagement::registerReboot()	2
+../src/main/systemManagement.cpp:189:5:static int SystemManagement::handleLeyer2Frame(InFrame&)	1
+../src/main/systemManagement.cpp:192:1:cpp)	1

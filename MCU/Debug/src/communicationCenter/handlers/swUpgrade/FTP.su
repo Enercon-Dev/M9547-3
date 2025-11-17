@@ -1,0 +1,12 @@
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:18:6:void FTP_OnReceiveEndDefault(uint32_t)	0	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:19:5:int FTP_OnReceiveDefault(Buffer&, uint16_t)	0	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:29:1:FTPClient::FTPClient(uint16_t, TCPPortTypes, Layer3&, void (*)(uint32_t), int (*)(Buffer&, uint16_t))	24	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:48:8:void FTPClient::openSocket()	8	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:59:7:int FTPClient::RequestFile(uint32_t, const char*)	32	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:265:8:void FTPClient::closeSocket()	8	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:274:8:bool FTPClient::isClosed() const	8	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:118:7:int FTPClient::SendError(FTP_ERRCODE)	24	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:87:7:int FTPClient::Retransmit()	32	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:138:7:int FTPClient::SaveBlockToMem(uint16_t)	32	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:202:8:void FTPClient::readBuffer()	24	static
+../src/communicationCenter/handlers/swUpgrade/FTP.cpp:164:8:void FTPClient::periodicCall()	16	static

@@ -1,0 +1,190 @@
+/**
+*****************************************************************************
+**
+**  File        : main.c
+**
+**  Abstract    : main function.
+**
+**  Functions   : main
+**
+**  Environment : Atollic TrueSTUDIO(R)
+**                STMicroelectronics STM32F4xx Standard Peripherals Library
+**
+**  Distribution: The file is distributed “as is,” without any warranty
+**                of any kind.
+**
+**  (c)Copyright Atollic AB.
+**  You may use this file as-is or modify it according to the needs of your
+**  project. This file may only be built (assembled or compiled and linked)
+**  using the Atollic TrueSTUDIO(R) product. The use of this file together
+**  with other tools than Atollic TrueSTUDIO(R) is not permitted.
+**
+*****************************************************************************
+*/
+
+#include "stm32f10x.h"
+#include "core_cm3.h"
+#include "stm32f10x_flash.h"
+#include <string.h>
+
+#define BASE_ADDRESS            0x08000000
+#define FLASH_BLOCK_SIZE ((uint32_t)(0x800))
+#define BOOT_DATA_ADDRESS       (BASE_ADDRESS + FLASH_BLOCK_SIZE)
+#define APPLICATION_ADDRESS     (BASE_ADDRESS + (FLASH_BLOCK_SIZE *4)) 
+#define BOOT_LOADER_VERSION     "BootLoader 1.0.1"
+
+
+typedef enum {FALSE, TRUE} boolean;
+
+#pragma pack()
+typedef struct {
+  char magicNumber[20];
+  uint32_t bootLocation;
+  uint32_t active_version_length;
+  uint32_t new_version_length;
+  char active_version_file[6];
+  char new_version[6];
+  char magicNumber2[20];
+} Memory_Type;
+
+/* Application start address */
+#pragma location=BOOT_DATA_ADDRESS
+const Memory_Type Memory = {BOOT_LOADER_VERSION, APPLICATION_ADDRESS, 0,0,"","", BOOT_LOADER_VERSION};
+
+void enterLiveLoop(){
+  while (1);
+}
+
+
+boolean MemoryOK(){
+  if (strcmp(Memory.magicNumber,BOOT_LOADER_VERSION) || strcmp(Memory.magicNumber2,BOOT_LOADER_VERSION))
+    return FALSE;
+  else 
+    return TRUE;
+}
+
+void ResetMemory(){
+
+  FLASH_Unlock();
+  FLASH_Status flashstatus = FLASH_GetStatus();
+  if (flashstatus == FLASH_ERROR_PG) { 
+    FLASH_ClearFlag(FLASH_FLAG_PGERR);
+  }
+  if (flashstatus == FLASH_ERROR_WRP) {
+    FLASH_ClearFlag(FLASH_FLAG_WRPRTERR);
+  }
+  
+  if (FLASH_ErasePage(BOOT_DATA_ADDRESS) != FLASH_COMPLETE) {
+    enterLiveLoop();
+  }
+  
+  FLASH_Lock(); 
+}
+
+void FixMemory(){
+  Memory_Type NewMemory = {BOOT_LOADER_VERSION, APPLICATION_ADDRESS, 0,0,"","", BOOT_LOADER_VERSION};
+  memcpy(NewMemory.active_version_file, Memory.new_version, 6);
+  NewMemory.active_version_length = Memory.new_version_length;
+  ResetMemory();
+  
+  FLASH_Unlock();
+  FLASH_Status flashstatus = FLASH_GetStatus();
+  if (flashstatus == FLASH_ERROR_PG) { 
+    FLASH_ClearFlag(FLASH_FLAG_PGERR);
+  }
+  if (flashstatus == FLASH_ERROR_WRP) {
+    FLASH_ClearFlag(FLASH_FLAG_WRPRTERR);
+  }
+  for (int i=0 ; i < sizeof(Memory_Type)/4; i++)
+    if (FLASH_ProgramWord(i*4+BOOT_DATA_ADDRESS, *((uint32_t *)(&NewMemory)+i) ) != FLASH_COMPLETE) {
+      enterLiveLoop();
+  }
+  
+  FLASH_Lock();
+  NVIC_SystemReset();
+  
+  
+}
+
+void UpgradeFile(){
+  
+
+FLASH_Unlock();
+  FLASH_Status flashstatus = FLASH_GetStatus();
+  if (flashstatus == FLASH_ERROR_PG) { 
+    FLASH_ClearFlag(FLASH_FLAG_PGERR);
+  }
+  if (flashstatus == FLASH_ERROR_WRP) {
+    FLASH_ClearFlag(FLASH_FLAG_WRPRTERR);
+  }
+  
+  for (uint32_t add = APPLICATION_ADDRESS; add < Memory.bootLocation ; add +=0x800){
+    if (FLASH_ErasePage(add) != FLASH_COMPLETE)
+      enterLiveLoop();
+  }
+  for (uint32_t offset = 0; offset < (Memory.new_version_length+3); offset+=4){
+    if (FLASH_ProgramWord(offset + APPLICATION_ADDRESS, *(uint32_t *)(Memory.bootLocation + offset)) != FLASH_COMPLETE)
+      enterLiveLoop();
+  }
+  FLASH_Lock(); 
+  
+  for (uint32_t offset = 0; offset < Memory.new_version_length; offset+=1){
+    if (*(uint8_t *)(offset + APPLICATION_ADDRESS) != *(uint8_t *)(Memory.bootLocation + offset))
+      enterLiveLoop();
+  }
+  
+  
+  
+  FixMemory();
+  
+
+}
+
+typedef void (*pFunction)(void);
+
+/**
+**===========================================================================
+**  Abstract: Bootloader
+**===========================================================================
+*/
+
+int bl_main(void)
+{
+  
+  pFunction appEntry;
+  uint32_t appStack;
+   
+  if(!MemoryOK()){
+    
+    /* Perform the update */
+    FixMemory();
+  }
+  
+  /* Check if firmware update required */
+  if (Memory.bootLocation != APPLICATION_ADDRESS)
+    UpgradeFile();
+  
+  /* Get the application stack pointer (First entry in the application vector table) */
+  appStack = (uint32_t) *((__IO uint32_t*)APPLICATION_ADDRESS);
+  
+  /* Get the application entry point (Second entry in the application vector table) */
+  appEntry = (pFunction) *(__IO uint32_t*) (APPLICATION_ADDRESS + 4);
+  
+  /* Reconfigure vector table offset register to match the application location */
+  SCB->VTOR = APPLICATION_ADDRESS;
+  
+  /* Set the application stack pointer */
+  __set_MSP(appStack);
+  
+  /* Start the application */
+  appEntry();
+  
+  while(1);
+  
+}
+
+
+
+
+
+

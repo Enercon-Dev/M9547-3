@@ -1,0 +1,2 @@
+../src/general/genericClasses.cpp:14:1:FlashUnlock::FlashUnlock()	8	static
+../src/general/genericClasses.cpp:30:1:FlashUnlock::~FlashUnlock()	8	static

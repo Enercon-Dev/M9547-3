@@ -1,0 +1,16 @@
+../src/stm32/stm32f10x_gpio.c:78:6:GPIO_Init	12
+../src/stm32/stm32f10x_gpio.c:166:6:GPIO_StructInit	1
+../src/stm32/stm32f10x_gpio.c:181:9:GPIO_ReadInputDataBit	2
+../src/stm32/stm32f10x_gpio.c:201:10:GPIO_ReadInputData	1
+../src/stm32/stm32f10x_gpio.c:213:9:GPIO_ReadOutputDataBit	2
+../src/stm32/stm32f10x_gpio.c:232:10:GPIO_ReadOutputData	1
+../src/stm32/stm32f10x_gpio.c:244:6:GPIO_SetBits	1
+../src/stm32/stm32f10x_gpio.c:256:6:GPIO_ResetBits	1
+../src/stm32/stm32f10x_gpio.c:272:6:GPIO_WriteBit	2
+../src/stm32/stm32f10x_gpio.c:290:6:GPIO_Write	1
+../src/stm32/stm32f10x_gpio.c:302:6:GPIO_PinLockConfig	1
+../src/stm32/stm32f10x_gpio.c:328:6:GPIO_EventOutputConfig	1
+../src/stm32/stm32f10x_gpio.c:345:6:GPIO_EventOutputCmd	1
+../src/stm32/stm32f10x_gpio.c:390:6:GPIO_PinRemapConfig	4
+../src/stm32/stm32f10x_gpio.c:432:6:GPIO_EXTILineConfig	1
+../src/stm32/stm32f10x_gpio.c:449:6:GPIO_ETH_MediaInterfaceConfig	1

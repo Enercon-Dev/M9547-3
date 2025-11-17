@@ -1,0 +1,14 @@
+../src/communicationCenter/ethernet/mac.cpp:25:1:MACAddr::MACAddr()	1
+../src/communicationCenter/ethernet/mac.cpp:32:1:MACAddr::MACAddr(const MACAddr&)	1
+../src/communicationCenter/ethernet/mac.cpp:39:1:MACAddr::MACAddr(const char*)	2
+../src/communicationCenter/ethernet/mac.cpp:50:6:bool MACAddr::isEmpty() const	3
+../src/communicationCenter/ethernet/mac.cpp:66:6:bool operator==(const MACAddr&, const MACAddr&)	1
+../src/communicationCenter/ethernet/mac.cpp:74:6:bool operator!=(const MACAddr&, const MACAddr&)	1
+../src/communicationCenter/ethernet/mac.cpp:82:13:const char* getMacAddr()	1
+../src/communicationCenter/ethernet/mac.cpp:97:1:IPData::IPData()	1
+../src/communicationCenter/ethernet/mac.cpp:107:6:void IPData::setData(uint32_t, uint32_t, uint32_t)	1
+../src/communicationCenter/ethernet/mac.cpp:118:6:bool IPData::isSameSubnet(uint32_t) const	1
+../src/communicationCenter/ethernet/mac.cpp:129:10:uint32_t IPData::getFirsthop(uint32_t) const	1
+../src/communicationCenter/ethernet/mac.cpp:141:6:bool IPData::isGateway(uint32_t) const	2
+../src/communicationCenter/ethernet/mac.cpp:152:6:bool IPData::equal(const IPData&) const	3
+../src/communicationCenter/ethernet/mac.cpp:170:6:bool operator==(const IPData&, const IPData&)	1

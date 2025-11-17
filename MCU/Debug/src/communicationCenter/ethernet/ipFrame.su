@@ -1,0 +1,22 @@
+../src/communicationCenter/ethernet/ipFrame.cpp:68:6:bool IPHeader::readLength(InFrame&)	24	static
+../src/communicationCenter/ethernet/ipFrame.cpp:125:6:bool IPHeader::isToMe(uint32_t)	4	static
+../src/communicationCenter/ethernet/ipFrame.cpp:103:6:bool IPHeader::readIPs(InFrame&)	16	static
+../src/communicationCenter/ethernet/ipFrame.cpp:144:6:void IPHeader::decodeOptions(InFrame&)	16	static
+../src/communicationCenter/ethernet/ipFrame.cpp:155:6:void IPHeader::decodeFrameType(uint16_t)	0	static
+../src/communicationCenter/ethernet/ipFrame.cpp:27:1:IPHeader::IPHeader(InFrame&, Arp&)	24	static
+../src/communicationCenter/ethernet/ipFrame.cpp:229:7:char* OutIPMsg::getCurPtr()	0	static
+../src/communicationCenter/ethernet/ipFrame.cpp:237:5:int OutIPMsg::writeHostU16(uint16_t)	8	static
+../src/communicationCenter/ethernet/ipFrame.cpp:245:5:int OutIPMsg::appendData(const char*, unsigned int)	8	static
+../src/communicationCenter/ethernet/ipFrame.cpp:253:5:int OutIPMsg::appendData(const Buffer&, unsigned int)	8	static
+../src/communicationCenter/ethernet/ipFrame.cpp:261:5:int OutIPMsg::appendData(const Buffer&, unsigned int, unsigned int)	8	static
+../src/communicationCenter/ethernet/ipFrame.cpp:280:6:void OutIPMsg::updateIPMsgLen()	8	static
+../src/communicationCenter/ethernet/ipFrame.cpp:269:5:int OutIPMsg::sendMsg()	8	static
+../src/communicationCenter/ethernet/ipFrame.cpp:333:6:void OutIPMsg::writeFrameType(IPFrameType)	8	static
+../src/communicationCenter/ethernet/ipFrame.cpp:424:6:void OutIPMsg::updateRecordRoute(char*, unsigned int, unsigned int)	4	static
+../src/communicationCenter/ethernet/ipFrame.cpp:450:6:void OutIPMsg::updateInternetTimestamp(char*, unsigned int, unsigned int)	24	static
+../src/communicationCenter/ethernet/ipFrame.cpp:354:6:void OutIPMsg::parseOptions(char*, unsigned int)	24	static
+../src/communicationCenter/ethernet/ipFrame.cpp:490:10:static uint16_t OutIPMsg::getIdentification()	0	static
+../src/communicationCenter/ethernet/ipFrame.cpp:299:6:void OutIPMsg::writeIPHeader(uint32_t, IPFrameType, unsigned int, const char*)	24	static
+../src/communicationCenter/ethernet/ipFrame.cpp:189:1:OutIPMsg::OutIPMsg(uint32_t, IPFrameType, CommunicationCenter&)	32	static
+../src/communicationCenter/ethernet/ipFrame.cpp:210:1:OutIPMsg::OutIPMsg(uint32_t, unsigned int, const char*, CommunicationCenter&)	32	static
+../src/communicationCenter/ethernet/ipFrame.cpp:508:1:IPFrame::IPFrame(InFrame&, Arp&)	16	static

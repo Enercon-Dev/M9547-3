@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{189A3682-C156-4CC2-8E6F-AD3BDA0A675A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>M9547</RootNamespace>
+    <AssemblyName>M9547</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>W:\Marom Meir\M9547\GUI\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>195E9227EB70E11ED795913FD4927F85ECE3656C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>M9547.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IPAddressControlLib, Version=1.2.4446.28646, Culture=neutral, PublicKeyToken=64ca5a4287aa7107, processorArchitecture=MSIL">
+      <HintPath>..\packages\IPAddressControl.1.2.4446.28646\lib\IPAddressControlLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tftp.Net, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tftp.Net.1.3.0\lib\net35\Tftp.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CalibrateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalibrateForm.Designer.cs">
+      <DependentUpon>CalibrateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LimitDataSource.cs" />
+    <Compile Include="Installer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installer.Designer.cs">
+      <DependentUpon>Installer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Led.cs">
+      <CustomToolNamespace>M1654_1</CustomToolNamespace>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Led.Designer.cs">
+      <DependentUpon>Led.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRC16.cs" />
+    <Compile Include="Data\Commands.cs" />
+    <Compile Include="Data\PDU.cs" />
+    <Compile Include="ChoosePDUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoosePDUs.Designer.cs">
+      <DependentUpon>ChoosePDUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="M9547.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="M9547.Designer.cs">
+      <DependentUpon>M9547.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GROUP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GROUP.designer.cs">
+      <DependentUpon>GROUP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleServer\Channel\ITransferChannel.cs" />
+    <Compile Include="SimpleServer\Channel\TransferChannelFactory.cs" />
+    <Compile Include="SimpleServer\Channel\UdpChannel.cs" />
+    <Compile Include="SimpleServer\FilterTransferError.cs" />
+    <Compile Include="SimpleServer\SimpleServer.cs" />
+    <Compile Include="OUTPUT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OUTPUT.designer.cs">
+      <DependentUpon>OUTPUT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Switch\Switch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Switch\Switch.Designer.cs">
+      <DependentUpon>Switch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Switch\Switch_Res.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Switch_Res.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WinDHCPLib\AddressLease.cs" />
+    <Compile Include="WinDHCPLib\DhcpMessage.cs" />
+    <Compile Include="WinDHCPLib\DhcpServer.cs" />
+    <Compile Include="WinDHCPLib\InternetAddress.cs" />
+    <Compile Include="WinDHCPLib\PhysicalAddress.cs" />
+    <EmbeddedResource Include="CalibrateForm.resx">
+      <DependentUpon>CalibrateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChoosePDUs.resx">
+      <DependentUpon>ChoosePDUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Installer.resx">
+      <DependentUpon>Installer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Led.resx">
+      <DependentUpon>Led.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M9547.resx">
+      <DependentUpon>M9547.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GROUP.resx">
+      <DependentUpon>GROUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="OUTPUT.resx">
+      <DependentUpon>OUTPUT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Switch\Switch_Res.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Switch_Res.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Data.Filter.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\EEprom.bmp" />
+    <Content Include="Properties\Fail.bmp" />
+    <Content Include="Properties\OK.bmp" />
+    <Content Include="Properties\Filter_NetWork.png" />
+    <Content Include="Properties\sw_off.ico" />
+    <Content Include="Properties\sw_on.ico" />
+    <None Include="Resources\EEprom.bmp" />
+    <Content Include="Switch\sw_off.ico" />
+    <Content Include="Switch\sw_on.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

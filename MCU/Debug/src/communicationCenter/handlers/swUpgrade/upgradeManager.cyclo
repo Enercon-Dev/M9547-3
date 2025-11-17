@@ -1,0 +1,10 @@
+../src/communicationCenter/handlers/swUpgrade/upgradeManager.cpp:11:1:upgradeManager::upgradeManager(Layer3&)	2
+../src/communicationCenter/handlers/swUpgrade/upgradeManager.cpp:21:17:COMMAND_SUCCESS upgradeManager::handleSetSoftwareUpdate(Buffer&)	2
+../src/communicationCenter/handlers/swUpgrade/upgradeManager.cpp:38:6:void upgradeManager::handleGetSoftwareInfo(Buffer&)	3
+../src/communicationCenter/handlers/swUpgrade/upgradeManager.cpp:189:5:int upgradeManager::SaveData(Buffer&, uint16_t)	5
+../src/communicationCenter/handlers/swUpgrade/upgradeManager.cpp:164:5:static int upgradeManager::On_DataReceived(Buffer&, uint16_t)	1
+../src/communicationCenter/handlers/swUpgrade/upgradeManager.cpp:215:5:int upgradeManager::Check_New_Version(uint32_t)	2
+../src/communicationCenter/handlers/swUpgrade/upgradeManager.cpp:224:5:int upgradeManager::Copy_New_Version(uint32_t)	6
+../src/communicationCenter/handlers/swUpgrade/upgradeManager.cpp:239:5:int upgradeManager::Set_Root_Location(uint32_t, uint32_t)	5
+../src/communicationCenter/handlers/swUpgrade/upgradeManager.cpp:147:6:void upgradeManager::StartSWUpgrade(uint32_t)	3
+../src/communicationCenter/handlers/swUpgrade/upgradeManager.cpp:116:6:static void upgradeManager::On_StartSWUpgrade(uint32_t)	1

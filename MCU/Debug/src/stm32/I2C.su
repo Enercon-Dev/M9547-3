@@ -1,0 +1,16 @@
+../src/stm32/I2C.cpp:386:6:void I2C_DRV::BusReset()	32	static
+../src/stm32/I2C.cpp:454:6:void I2C_DRV::FullReset()	0	static
+../src/stm32/I2C.cpp:493:13:ErrorStatus I2C_DRV::GPIO_INIT()	24	static
+../src/stm32/I2C.cpp:514:13:ErrorStatus I2C_DRV::IT_INIT()	24	static
+../src/stm32/I2C.cpp:458:13:ErrorStatus I2C_DRV::Init()	40	static
+../src/stm32/I2C.cpp:57:13:ErrorStatus I2C_DRV::StartCom()	16	static
+../src/stm32/I2C.cpp:374:6:void I2C_DRV::Reset()	8	static
+../src/stm32/I2C.cpp:321:9:uint8_t I2C_DRV::ScanBUS(uint8_t)	40	static
+../src/stm32/I2C.cpp:9:13:ErrorStatus I2C_DRV::WaitBusy()	24	static
+../src/stm32/I2C.cpp:20:13:ErrorStatus I2C_DRV::SendMessage(const TxI2CMsg*)	16	static
+../src/stm32/I2C.cpp:31:13:ErrorStatus I2C_DRV::RequestMessage(RxI2CMsg*)	16	static
+../src/stm32/I2C.cpp:43:13:ErrorStatus I2C_DRV::SendRequestMessage(const TxI2CMsg*, RxI2CMsg*)	16	static
+../src/stm32/I2C.cpp:349:12:BusyStatus I2C_DRV::PollAddress(uint8_t)	24	static
+../src/stm32/I2C.cpp:94:6:void I2C_DRV::I2C_Handler()	16	static
+../src/stm32/I2C.cpp:536:6:void I2C1_EV_IRQHandler()	8	static
+../src/stm32/I2C.cpp:541:6:void I2C1_ER_IRQHandler()	16	static

@@ -1,0 +1,3 @@
+../src/communicationCenter/SlaveMasterComm.cpp:6:1:SlaveMasterComm::SlaveMasterComm()	2
+../src/communicationCenter/SlaveMasterComm.cpp:9:13:ErrorStatus SlaveMasterComm::xfetIoData(void*, void*)	1
+../src/communicationCenter/SlaveMasterComm.cpp:14:13:ErrorStatus SlaveMasterComm::xfetIoDataWait(void*, void*)	3
