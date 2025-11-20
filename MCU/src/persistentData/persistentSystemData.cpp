@@ -187,9 +187,34 @@ ErrorStatus PersistentSystemData::Set_DCISetting(const uint8_t *OrderSetting, co
   return (ErrorStatus) rc;
 }
 
+ErrorStatus PersistentSystemData::Get_VinSetting(uint16_t *Vmin)
+{
+  int rc = (int) SUCCESS;
+  if (MemoryOk == ERROR)
+  {
+    SystemSettings_t st;
+    *Vmin = st.VinVoltAlert;
+    rc &= ERROR;
+  }
+  else
+      rc &= Memory.ReadFromEEprom(&(((SystemSettings_t *)SYSTEM_DATA_BASE_ADDRESS)->VinVoltAlert) , 2,Vmin);
+  return (ErrorStatus) rc;
+}
+
+ErrorStatus PersistentSystemData::Set_VinSetting(uint16_t Vmin)
+{
+  if (MemoryOk == ERROR)
+    return ERROR;
+  int rc = (int) SUCCESS;
+
+  rc &= Memory.WriteToEEprom(&(((SystemSettings_t *)SYSTEM_DATA_BASE_ADDRESS)->VinVoltAlert) , 2, &Vmin);
+  return (ErrorStatus) rc;
+}
+
+
 ErrorStatus PersistentSystemData::UpdateMemory(const SystemSettings_t* nSystemSettings)
 {
-  uint8_t dataLen = sizeof(SystemSettings_t);
+  //uint8_t dataLen = sizeof(SystemSettings_t);
 
   //return Memory.WriteToEEprom((SystemSettings_t *)SYSTEM_DATA_BASE_ADDRESS, dataLen ,nSystemSettings); // YakirZ - Minus 20 in order to exclude MAGIC_NUM, otherwise we get eeprom error
   Memory.WriteToEEprom((&((SystemSettings_t *)SYSTEM_DATA_BASE_ADDRESS)->magicNumber),20,nSystemSettings->magicNumber);
@@ -217,7 +242,7 @@ ErrorStatus PersistentSystemData::FullBufferRead(Buffer& DataOut)
 
 void PersistentSystemData::handleGetConfig(Buffer& DataOut)
 {
-  DataOut.writeShort(4+sizeof(SystemSettings_t)-20);
+  DataOut.writeShort(4+sizeof(SystemSettings_t)-2-20);
   SystemSettings_t setting;
   if(Memory.ReadFromEEprom(SYSTEM_DATA_BASE_ADDRESS, sizeof(SystemSettings_t), &setting) == ERROR)
       DataOut.writeChar(1);

@@ -1,6 +1,5 @@
 #include "HardwareCenter.h"
 #include "stm32Interface.h"
-#include "systemManagement.h"
 
 
 
@@ -42,12 +41,7 @@ void HardwareCenter::periodicCall(){
   GetStatus(Status);
 
 
-  if((Status.INPUT_VOLT / 16.0f) < 23.0f && (getTimerTicks() % 1000 > 500))
-  {
-	  GPIO_SetBits(IO_Port,FAULT_Pin);
-  }
-  else
-	  GPIO_ResetBits(IO_Port,FAULT_Pin);
+
 
   if (ins.RAT_L2H_Flag)
   {
@@ -108,23 +102,35 @@ ErrorStatus HardwareCenter::GetStatus(Status_Msg_T& Status)
   StatusAlert.BIT = Status.BIT & (~LastStatus.BIT);
   
 
-  for (int i=0; i<sizeof(StatusAlert); i++)
+  for (uint32_t i=0; i<sizeof(StatusAlert); i++)
     *(((uint8_t *)(&LastStatus))+i) = *(((uint8_t *)(&Status))+i);
   
-  IOs.SetFault((Status.ERROR_STAT & 0x01) ? FunctionalState::ENABLE : FunctionalState::DISABLE);
-  
+  if (Status.ERROR_STAT & 0x01)
+  {
+	  IOs.SetFault( FunctionalState::ENABLE);
+
+  }
+  else
+  {
+	  if( (Status.INPUT_VOLT  < VinMinAlert) && (getTimerTicks() % 2000 > 1000)) // for m9547 - 3
+	  {
+		  IOs.SetFault( FunctionalState::ENABLE);
+	  }
+	  else
+		  IOs.SetFault( FunctionalState::DISABLE);
+  }
   return ErrorStatus::SUCCESS;
 }
 
 FlagStatus HardwareCenter::GetAlert() const
 {
-  for (int i=0; i<sizeof(StatusAlert); i++)
+  for (uint32_t i=0; i<sizeof(StatusAlert); i++)
     if (*((uint8_t *)(&StatusAlert)+i) != 0)
       return SET;
   return FlagStatus::RESET;
 }
 void HardwareCenter::AlertAcknoledge(){
-  for (int i=0; i<sizeof(StatusAlert); i++)
+  for (uint32_t i=0; i<sizeof(StatusAlert); i++)
     *((uint8_t *)(&StatusAlert)+i) = 0;
 
 }
@@ -225,6 +231,32 @@ COMMAND_SUCCESS HardwareCenter::handleSetLimit(Buffer& DataIn){
     
   }
   return (COMMAND_SUCCESS)(rc ? EEPROM_ERROR : ACK);
+}
+
+void HardwareCenter::handleSetVinLimit(Buffer& DataIn,Buffer& DataOut)
+{
+	DataOut.writeShort(6);
+
+	if (DataIn.readShort() != 6)
+	{
+		DataOut.writeShort(VinMinAlert);
+		DataOut.writeChar(NACK);
+		return;
+	}
+	if (DataIn.readChar() == 1)
+	{
+		VinMinAlert = DataIn.readShort();
+		DataOut.writeShort(VinMinAlert);
+		if( SystemManagement::getPersistentDataCenter().Set_VinSetting(VinMinAlert) == ERROR)
+			DataOut.writeShort(EEPROM_ERROR);
+		else
+			DataOut.writeShort(ACK);
+		return;
+	}
+	DataOut.writeShort(VinMinAlert);
+	DataOut.writeChar(ACK);
+	return;
+
 }
 
 COMMAND_SUCCESS HardwareCenter::handleSetGroup(Buffer& DataIn){

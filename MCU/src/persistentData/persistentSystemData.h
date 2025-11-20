@@ -76,9 +76,10 @@ typedef struct {
     {0,0,0},
     {0,0,0},
   };
-                                                        // SUB TOTAL = 233B
+  uint16_t VinVoltAlert = (23*16);                                //2B
+  	  	  	  	  	  	  	  	  	  	  	  	  	  	  // SUB TOTAL = 205B
   char magicNumber[20] = PERSISTENT_MAGIC_NUM;          // 20B
-} SystemSettings_t;                                     // TOTAL = 253B
+} SystemSettings_t;                                     // TOTAL = 225B
 #pragma pack(pop)
 
 
@@ -108,6 +109,9 @@ public:
    ErrorStatus Get_DCISetting(uint8_t *OrderSetting, uint8_t *ActionSetting, uint16_t *DelaySetting); 
    ErrorStatus Set_DCISetting(const uint8_t *OrderSetting, const uint8_t *ActionSetting, const uint16_t *DelaySetting); 
   
+   ErrorStatus Get_VinSetting(uint16_t *Vmin);
+   ErrorStatus Set_VinSetting(uint16_t Vmin);
+
   void handleGetConfig(Buffer& DataOut);
   
   EEprom&      GetMemory(void);

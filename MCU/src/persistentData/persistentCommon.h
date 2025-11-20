@@ -29,7 +29,7 @@
            (PERSISTENT_SECTION_BASE + (var * FLASH_BLOCK_SIZE))
 
 #define PERSISTENT_MAGIC_NUM "M9547 SW a"
-#define PERSISTENT_VERSION "20251117_003.000.000"
+#define PERSISTENT_VERSION "20251117_003.000.001"
 #define CUSTOMER_PN         "M9547-3.-"
 
 // a single block holding all unchangable data, such as MAC address.

@@ -376,6 +376,15 @@ ErrorStatus PersistentData::Set_PorSetting(const uint8_t *OrderSetting, const ui
   return mPersistentSystemData.Set_DCISetting(OrderSetting, ActionSetting, DelaySetting);
 }
 
+ ErrorStatus PersistentData::Get_VinSetting(uint16_t *Vmin)
+{
+  return mPersistentSystemData.Get_VinSetting(Vmin);
+}
+ ErrorStatus PersistentData::Set_VinSetting(uint16_t Vmin)
+{
+  return mPersistentSystemData.Set_VinSetting(Vmin);
+}
+
 int PersistentData::getResetCounter() const
 {
   return 0;

@@ -54,6 +54,9 @@ public:
   virtual ErrorStatus Get_DCISetting(uint8_t *OrderSetting, uint8_t *ActionSetting, uint16_t *DelaySetting) = 0; 
   virtual ErrorStatus Set_DCISetting(const uint8_t *OrderSetting, const uint8_t *ActionSetting, const uint16_t *DelaySetting) = 0; 
   
+  virtual ErrorStatus Get_VinSetting(uint16_t *Vmin) = 0;
+  virtual ErrorStatus Set_VinSetting(uint16_t Vmin) = 0;
+
   virtual void handleGetConfig(Buffer& DataOut) = 0;
   
   // statistics

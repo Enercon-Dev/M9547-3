@@ -9,6 +9,8 @@
 #include "communicationCenter\handlers\handlersCommon.h"
 #include "communicationCenter/buffers/buffers.h"
 #include "constants.h"
+#include "systemManagement.h"
+
 
 void ChangeOutputWrapper(uint8_t output, uint8_t operation);
 
@@ -24,6 +26,7 @@ public:
     for (int i=8 ; i<39 ; i++)
       *(((uint8_t *)(&LastStatus))+i) = 0;
     AlertAcknoledge();
+    SystemManagement::getPersistentDataCenter().Get_VinSetting(&VinMinAlert);
     Macro.eventSetOutput = ChangeOutputWrapper;
     return CB_Int::Init();
   }
@@ -41,6 +44,7 @@ public:
   COMMAND_SUCCESS handleTripRest(Buffer& DataIn);
   COMMAND_SUCCESS handleSetBattle(Buffer& DataIn);
   COMMAND_SUCCESS handleSetLimit(Buffer& DataIn);
+  void handleSetVinLimit(Buffer& DataIn,Buffer& DataOut);
   void handelGetOutsTemp(Buffer& DataOut);
 
 
@@ -56,7 +60,7 @@ private:
 
   uint8_t state;
 
-
+  uint16_t VinMinAlert;
   uint32_t mOutOnTime[NUM_OF_CB];
   Status_Msg_T StatusAlert;
   Status_Msg_T LastStatus;

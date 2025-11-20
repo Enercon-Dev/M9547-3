@@ -199,6 +199,10 @@ uint8_t Controller::readBuffer()
   case CONTROL_OPCODE_SET_IP_MODE:
     sendAckNack(CONTROL_OPCODE_IP_MODE_ACK, handleSetIP());
     break;  
+  case CONTROL_OPCODE_INPUT_LIMIT:
+	  mBuffers.getOutBuffer().writeChar(CONTROL_OPCODE_INPUT_LIMIT_ACK);
+	  HardwareCenter::GetInstance().handleSetVinLimit(mBuffers.getInBuffer(),mBuffers.getOutBuffer());
+	  break;
   case CONTROL_OPCODE_GET_SW_INFO:
     mCommunicationCenter.getUpgradeMan().handleGetSoftwareInfo(mBuffers.getOutBuffer());
     break;
